@@ -1,0 +1,138 @@
+.c-registration {
+	padding: 75px 0 90px;
+	background: url('../images/registration-bg.jpg') no-repeat center;
+	background-size: cover;
+
+	@media screen and (max-width: @screen-sm) {
+		padding: 50px 0 70px;
+	}
+
+	&__title {
+		margin-bottom: round(45/56em, 3);
+		.fz(56, 64);
+		font-weight: 100;
+		color: #fff;
+
+		@media screen and (max-width: @screen-md) {
+			.fz(40, 48);
+		}
+
+		@media screen and (max-width: @screen-xs) {
+			text-align: center;
+		}
+	}
+
+	&__text {
+		.fz(24, 30);
+		font-weight: 300;
+		color: #fff;
+
+		@media screen and (max-width: @screen-md) {
+			.fz(20, 24);
+		}
+
+		@media screen and (max-width: @screen-xs) {
+			text-align: center;
+		}
+	}
+
+	&__col {
+
+		&--left {
+			width: 62%;
+
+			@media screen and (max-width: @screen-sm) {
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+
+		&--right {
+			width: 31.35%;
+			justify-content: space-around;
+
+			@media screen and (max-width: @screen-sm) {
+				width: 100%;
+				flex-direction: row;
+				align-items: flex-start;
+			}
+
+			@media screen and (max-width: @screen-xs) {
+				justify-content: center;
+			}
+		}
+	}
+
+	&__socials {
+		padding-top: 12px;
+		text-align: right;
+		font-size: 0;
+		margin-left: -44px;
+		align-self: flex-start;
+
+		@media screen and (max-width: @screen-sm) {
+			order: 2;
+			padding-top: 0;
+		}
+
+		&-item {
+			display: inline-block;
+			margin-right: 8px;
+			font-size: @base-font;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		&-link {
+			display: block;
+			width: 40px;
+			height: 40px;
+			background-repeat: no-repeat;
+			background-position: center;
+			border-radius: 50%;
+			border: 1px solid transparent;
+			transition: background-color .3s;
+
+			&:hover {
+				background-color: #fff;
+			}
+		}
+	}
+
+	&__date {
+		text-align: center;
+		.fz(17, 36);
+		font-weight: 300;
+		letter-spacing: .01em;
+		color: #fff;
+	
+		@media screen and (max-width: @screen-sm) {
+			text-align: left;
+		}
+
+		@media screen and (max-width: @screen-xs) {
+			text-align: center;
+		}
+
+		&-wrapper {
+			text-align: center;
+
+			@media screen and (max-width: @screen-sm) {
+				order: 1;
+			}
+
+			@media screen and (max-width: @screen-xs) {
+				margin-bottom: 20px;
+			}
+
+			.c-btn {
+
+				@media screen and (max-width: @screen-sm) {
+					margin-left: 19px;
+				}
+			}
+		}
+	}
+}

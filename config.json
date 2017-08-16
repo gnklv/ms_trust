@@ -1,0 +1,25 @@
+{
+	"devStatic": "/",
+	"buildStatic": "",
+	"buildDir": "build",
+	"port": 8080,
+	"dpe": false,
+	"commonData": ["data"],
+	"defaultLayout": "layout.html", 
+	"emptyLayout": "empty_layout.html", 
+	"contentOnly": false,
+	"storage": "https://your-path-to-blob",
+	"buildIgnore": ["less", "javascripts/sources"],
+	"pages": [
+		{
+			"name": "index",
+			"route": "/",
+			"pageData": ["index"],
+			"pageVars": {
+				"title": "Путь к безопасности бизнеса: You trust IT. MS Russia",
+				"description": "Международный онлайн форум по безопасности от Microsoft",
+				"og": true
+			}
+		}
+	]
+}

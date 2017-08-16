@@ -1,0 +1,21 @@
+.c-title {
+	width: 100%;
+	margin-bottom: round(47/70em, 3);
+	text-align: center;
+	.fz(70, 78);
+	font-weight: 100;
+	letter-spacing: .01em;
+	color: #09589f;
+
+	&--def {
+		color: #000;
+	}
+
+	@media screen and (max-width: @screen-md) {
+		.fz(56, 64);
+	}
+
+	@media screen and (max-width: @screen-sm) {
+		.fz(40, 48);
+	}
+}

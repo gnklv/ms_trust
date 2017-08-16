@@ -1,0 +1,468 @@
+{% extends layout %}
+{% block content %}
+	
+	<div class="c-subnav">
+		<div class="c-subnav__container">
+			<div class="c-subnav__inner">
+				<button class="c-subnav__title">
+					You trust IT!
+				</button>
+				<ul class="c-subnav__list">
+					<li class="c-subnav__item">
+						<a class="c-subnav__link" href="#">О мероприятии</a>
+					</li>
+					<li class="c-subnav__item">
+						<a class="c-subnav__link" href="#">Программа</a>
+					</li>
+					<li class="c-subnav__item">
+						<a class="c-subnav__link" href="#">Спикеры</a>
+					</li>
+					<li class="c-subnav__item">
+						<a class="c-subnav__link" href="#">Решения</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<section class="c-hero">
+		<div class="c-bgvideo__video-wrapper">
+			<video class="c-bgvideo__video" id="video-bg" muted playsinline poster="{{ 'hero-bg.jpg' | img_asset }}">
+				<source src="{{ 'hero_video.webm' | video_asset }}" type="video/webm">
+				<source src="{{ 'hero_video.mp4' | video_asset }}" type="video/mp4">
+			</video>
+		</div>
+		<div class="l-container">
+			<p class="c-hero__subtitle c-hero__subtitle--top">
+				Международный онлайн-форум
+			</p>
+			<h1 class="c-hero__title">
+				You Trust&nbsp;IT
+			</h1>
+			<p class="c-hero__subtitle c-hero__subtitle--middle c-hero__subtitle--upper">
+				Путь к безопасности бизнеса
+			</p>
+			<p class="c-hero__subtitle">
+				27&nbsp;сентября 2017, 10:00&nbsp;МСК
+			</p>
+		</div>
+		<div class="c-hero__desc-wrapper">
+			<div class="c-hero__desc">
+				<div class="l-container">
+					<div class="l-flex l-flex--between">
+						<ul class="c-hero__anchors-list">
+							<li class="c-hero__anchors-item">
+								<a class="c-hero__anchors-link" href="#anchor-about">
+									<span class="c-hero__anchors-text">О&nbsp;мероприятии</span>
+								</a>
+							</li>
+							<li class="c-hero__anchors-item">
+								<a class="c-hero__anchors-link" href="#anchor-programm">
+									<span class="c-hero__anchors-text">Программа</span>
+								</a>
+							</li>
+							<li class="c-hero__anchors-item">
+								<a class="c-hero__anchors-link" href="#anchor-partners">
+									<span class="c-hero__anchors-text">Партнеры</span>
+								</a>
+							</li>
+							<li class="c-hero__anchors-item">
+								<a class="c-hero__anchors-link" href="#anchor-speakers">
+									<span class="c-hero__anchors-text">Спикеры</span>
+								</a>
+							</li>
+						</ul>
+						<div class="c-hero__btn-wrapper">
+							<a class="c-btn" href="#">
+								<span class="c-btn__text">Безопасная регистрация</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="c-themes" id="anchor-about">
+		<div class="c-themes__circle-wrapper">
+			<div class="l-container c-themes__inner">
+				<h2 class="c-title">
+					О&nbsp;мероприятии
+				</h2>
+				<p class="c-themes__subtitle">
+					Безопасность&nbsp;&mdash; это ключ к&nbsp;защите вашего бизнеса.
+				</p>
+
+				<div class="l-row c-themes__item--mb">
+					<div class="l-col--md-6">
+						<p class="c-themes__text">
+							К&nbsp;безопасности бизнеса нужно подходить также ответственно, как и&nbsp;к&nbsp;его управлению целиком. Учитывать баланс между возможными внешними угрозами, доходностью организации и&nbsp;рисками потери важной бизнес-информации, включая персональные данные.
+						</p>
+						<p class="c-themes__text">
+							Управление серверной и&nbsp;клиентской инфраструктурой, уязвимыми бизнес-процессами и&nbsp;критически важной для бизнеса информацией прямо влияет на&nbsp;будущие развитие вашего бизнеса.
+						</p>
+					</div>
+					<div class="l-col--md-6">
+						<p class="c-themes__text">
+							Масштабная кибератака может привести к&nbsp;потере клиентов, снизить прибыль, испортить отношения с&nbsp;партнерами и&nbsp;учредителями, а&nbsp;не&nbsp;соответствие требованиям законодательства&nbsp;&mdash; привести к&nbsp;существенным штрафам и&nbsp;блокировке ресурсов.
+						</p>
+						<p class="c-themes__text">
+							На&nbsp;форуме мы&nbsp;расскажем о&nbsp;ключевых тенденциях в&nbsp;области цифровой безопасности, о&nbsp;современных интеллектуальных методах защиты информации и&nbsp;предотвращении утечек бизнес-критичных данных. Особое внимание мы&nbsp;уделим юридическим аспектам, связанных с&nbsp;соответствием европейскому регламенту по&nbsp;сбору и&nbsp;использованию персональных данных (GDPR), а&nbsp;также сравним его с&nbsp;локальным законодательством.
+						</p>
+					</div>
+				</div>
+
+				<div class="l-row">
+					<div class="l-col--xs-4 c-themes__item c-themes__item--pt" data-aos="fade-up" data-aos-delay="0">
+						<p class="c-themes__point">
+							Кибербезопасность
+						</p>
+						<p class="c-themes__point-text">
+							Защита данных в&nbsp;условиях возрастающей динамики бизнеса
+						</p>
+						<div class="c-themes__icon" style="background-image: url({{ 'themes-icon-1.png' | img_asset }})"></div>
+					</div>
+					<div class="l-col--xs-4 c-themes__item" data-aos="fade-up" data-aos-delay="100">
+						<p class="c-themes__point">
+							Инновации
+						</p>
+						<p class="c-themes__point-text">
+							Ключевые тренды и&nbsp;актуальные внедрения сегодняшнего дня
+						</p>
+						<div class="c-themes__icon" style="background-image: url({{ 'themes-icon-2.png' | img_asset }})"></div>
+					</div>
+					<div class="l-col--xs-4 c-themes__item c-themes__item--pt" data-aos="fade-up" data-aos-delay="200">
+						<p class="c-themes__point">
+							Юридические аспекты
+						</p>
+						<p class="c-themes__point-text">
+							Соответствие нормам, регламентам и&nbsp;законодательству
+						</p>
+						<div class="c-themes__icon" style="background-image: url({{ 'themes-icon-3.png' | img_asset }})"></div>
+					</div>
+				</div>
+				<div class="c-themes__circle" data-aos="zoom-in-right"></div>
+			</div>
+		</div>
+
+		<div class="c-themes__btn">
+			<a class="c-btn c-btn--light" href="#">
+				<span class="c-btn__text">Безопасная регистрация</span>
+			</a>
+		</div>
+	</section>
+
+	<section class="c-programm" id="anchor-programm">
+		<div class="l-container">
+			<h2 class="c-title">Программа форума</h2>
+			<!-- <div class="c-programm__divider">
+				<span class="c-programm__icon" style="background-image: url({{ 'divider-icon-start.png' | img_asset }})"></span>
+			</div> -->
+			
+			<div class="c-programm__title-wrapper">
+				<p class="c-programm__title">
+					Пленарная сессия
+				</p>
+			</div>
+
+			<div class="c-programm__shedule">
+				{%- for item in index.programm.plenar %}
+				{%- if item.break %}
+				<div class="c-programm__item c-programm__item--disabled">
+				{%- else %}
+				<div class="c-programm__item">
+				{%- endif %}
+					{%- if item.connect %}
+					<div class="c-programm__connect" data-aos="zoom-in" data-aos-anchor-placement="top-center"></div>
+					{%- endif %}
+					<div class="c-programm__col c-programm__col--sm" data-aos="fade-up">
+						{%- if item.point %}
+						<div class="c-programm__point"></div>
+						{% endif %}
+						<div class="c-programm__time-wrapper">
+							<p class="c-programm__time">{{ item.time | safe }}</p>
+							<p class="c-programm__time-duration">{{ item.duration | safe }}</p>
+						</div>
+					</div>
+					<div class="c-programm__col c-programm__col--lg" data-aos="fade-up">
+						{%- if item.break %}
+						<p class="c-programm__item-title">Перерыв</p>
+						{%- else %}
+						<div class="c-programm__item-title-wrapper">
+							<a class="c-programm__item-title" href="#">
+								{{ item.title | safe }}
+							</a>
+						</div>
+						{%- if item.desc %}
+						<p class="c-programm__item-desc">
+							{{ item.desc | safe }}
+						</p>
+						{%- endif %}
+						{%- if item.docs %}
+						<div class="c-programm__tag-wrapper">
+						{%- for doc in item.docs %}
+							<a href="{{ doc.link }}" class="c-programm__tag">{{ doc.kind }}</a>
+						{%- endfor %}
+						</div>
+						{%- endif %}
+						{%- endif %}
+					</div>
+				</div>
+				{%- endfor %}
+			</div>
+			
+			<div class="l-row">
+				<div class="l-col--md-6">
+					<div class="c-programm__title-wrapper">
+						<p class="c-programm__title">
+							Соответствие законодательству и&nbsp;правовым регламентам
+						</p>
+					</div>
+					
+					<div class="c-programm__shedule">
+						{%- for item in index.programm.track1 %}
+						{%- if item.break %}
+						<div class="c-programm__item c-programm__item--disabled">
+						{%- else %}
+						<div class="c-programm__item">
+						{%- endif %}
+							{%- if item.connect %}
+							<div class="c-programm__connect" data-aos="zoom-in" data-aos-anchor-placement="top-center"></div>
+							{%- endif %}
+							<div class="c-programm__col c-programm__col--sm" data-aos="fade-up">
+								{%- if item.point %}
+								<div class="c-programm__point"></div>
+								{% endif %}
+								<div class="c-programm__time-wrapper">
+									<p class="c-programm__time">{{ item.time | safe }}</p>
+									<p class="c-programm__time-duration">{{ item.duration | safe }}</p>
+								</div>
+							</div>
+							<div class="c-programm__col c-programm__col--lg" data-aos="fade-up">
+								{%- if item.break %}
+								<p class="c-programm__item-title">Перерыв</p>
+								{%- else %}
+								<div class="c-programm__item-title-wrapper">
+									<a class="c-programm__item-title" href="#">
+										{{ item.title | safe }}
+									</a>
+								</div>
+								{%- if item.desc %}
+								<p class="c-programm__item-desc">
+									{{ item.desc | safe }}
+								</p>
+								{%- endif %}
+								{%- if item.docs %}
+								<div class="c-programm__tag-wrapper">
+								{%- for doc in item.docs %}
+									<a href="{{ doc.link }}" class="c-programm__tag">{{ doc.kind }}</a>
+								{%- endfor %}
+								</div>
+								{%- endif %}
+								{%- endif %}
+							</div>
+						</div>
+						{%- endfor %}
+					</div>
+
+				</div>
+
+				<div class="l-col--md-6">
+					<div class="c-programm__title-wrapper">
+						<p class="c-programm__title">
+							Кибербезопасность бизнеса и бизнес-процессов
+						</p>
+					</div>
+					
+					<div class="c-programm__shedule">
+						{%- for item in index.programm.track2 %}
+						{%- if item.break %}
+						<div class="c-programm__item c-programm__item--disabled">
+						{%- else %}
+						<div class="c-programm__item">
+						{%- endif %}
+							{%- if item.connect %}
+							<div class="c-programm__connect" data-aos="zoom-in" data-aos-anchor-placement="top-center"></div>
+							{%- endif %}
+							<div class="c-programm__col c-programm__col--sm" data-aos="fade-up">
+								{%- if item.point %}
+								<div class="c-programm__point"></div>
+								{% endif %}
+								<div class="c-programm__time-wrapper">
+									<p class="c-programm__time">{{ item.time | safe }}</p>
+									<p class="c-programm__time-duration">{{ item.duration | safe }}</p>
+								</div>
+							</div>
+							<div class="c-programm__col c-programm__col--lg" data-aos="fade-up">
+								{%- if item.break %}
+								<p class="c-programm__item-title">Перерыв</p>
+								{%- else %}
+								<div class="c-programm__item-title-wrapper">
+									<a class="c-programm__item-title" href="#">
+										{{ item.title | safe }}
+									</a>
+								</div>
+								{%- if item.desc %}
+								<p class="c-programm__item-desc">
+									{{ item.desc | safe }}
+								</p>
+								{%- endif %}
+								{%- if item.docs %}
+								<div class="c-programm__tag-wrapper">
+								{%- for doc in item.docs %}
+									<a href="{{ doc.link }}" class="c-programm__tag">{{ doc.kind }}</a>
+								{%- endfor %}
+								</div>
+								{%- endif %}
+								{%- endif %}
+							</div>
+						</div>
+						{%- endfor %}
+					</div>
+
+				</div>
+			</div>
+
+			<div class="c-programm__title-wrapper">
+				<p class="c-programm__title">
+					Решения партнеров. Чтобы Бизнес стал Безопасным.
+				</p>
+			</div>
+
+			<div class="c-programm__shedule">
+				{%- for item in index.programm.track3 %}
+				{%- if item.break %}
+				<div class="c-programm__item c-programm__item--disabled">
+				{%- else %}
+				<div class="c-programm__item">
+				{%- endif %}
+					{%- if item.connect %}
+					<div class="c-programm__connect" data-aos="zoom-in" data-aos-anchor-placement="top-center"></div>
+					{%- endif %}
+					<div class="c-programm__col c-programm__col--sm" data-aos="fade-up">
+						{%- if item.point %}
+						<div class="c-programm__point"></div>
+						{% endif %}
+						<div class="c-programm__time-wrapper">
+							<p class="c-programm__time">{{ item.time | safe }}</p>
+							<p class="c-programm__time-duration">{{ item.duration | safe }}</p>
+						</div>
+					</div>
+					<div class="c-programm__col c-programm__col--lg" data-aos="fade-up">
+						{%- if item.break %}
+						<p class="c-programm__item-title">Перерыв</p>
+						{%- else %}
+						<div class="c-programm__item-title-wrapper">
+							<a class="c-programm__item-title" href="#">
+								{{ item.title | safe }}
+							</a>
+						</div>
+						{%- if item.desc %}
+						<p class="c-programm__item-desc">
+							{{ item.desc | safe }}
+						</p>
+						{%- endif %}
+						{%- if item.docs %}
+						<div class="c-programm__tag-wrapper">
+						{%- for doc in item.docs %}
+							<a href="{{ doc.link }}" class="c-programm__tag">{{ doc.kind }}</a>
+						{%- endfor %}
+						</div>
+						{%- endif %}
+						{%- endif %}
+					</div>
+				</div>
+				{%- endfor %}
+			</div>
+		
+			<div class="c-programm__divider">
+				<span class="c-programm__icon" style="background-image: url({{ 'divider-icon-fin.png' | img_asset }})"></span>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="c-partners" id="anchor-partners">
+		<div class="l-container">
+			<h2 class="c-title c-title--def">Партнерские решения</h2>
+			<div class="c-partners__inner">
+				<div class="c-partners__slider">
+					{%- for item in index.partners %}
+					<div class="c-partners__item">
+						<div class="c-partners__img-wrapper">
+							<div class="c-partners__img" style="background-image: url({{ item.img | img_asset }})"></div>
+						</div>
+						<div class="c-partners__content">
+							<p class="c-partners__text">
+								{{ item.text | safe }}
+							</p>
+							<a class="c-partners__link" href="#">Подробнее</a>
+						</div>
+					</div>
+					{%- endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="c-speakers" id="anchor-speakers">
+		<div class="l-container">
+			<h2 class="c-title c-title--def">Спикеры</h2>
+			<div class="c-speakers__inner">
+				<div class="c-speakers__slider">
+					{%- for item in index.speakers %}
+					<div class="c-speakers__item">
+						<div class="c-speakers__photo" style="background-image: url({{ item.img | img_asset }})"></div>
+						<div class="c-speakers__content">
+							<p class="c-speakers__name">{{ item.name }}</p>
+							<p class="c-speakers__post">
+								{{ item.post | safe }}
+							</p>
+							<p class="c-speakers__desc">
+								{{ item.desc | safe }}
+							</p>
+						</div>
+					</div>
+					{%- endfor %}
+				</div>
+			</div>	
+		</div>
+	</section>
+	
+	<section class="c-registration">
+		<div class="l-container">
+			<div class="l-flex l-flex--between">
+				<div class="c-registration__col--left">
+					<p class="c-registration__title">Присоединяйтесь!</p>
+					<p class="c-registration__text">
+						Международный онлайн-форум You trust IT.<br>
+						Путь к&nbsp;безопасности бизнеса.<br>
+						27&nbsp;сентября 2017, 10:00&nbsp;мск.
+					</p>
+				</div>
+				<div class="c-registration__col--right l-flex l-flex--col">
+					<div class="c-registration__date-wrapper">
+						<a class="c-btn" href="#">
+							<span class="c-btn__text">Безопасная регистрация</span>
+						</a>
+					</div>
+					<ul class="c-registration__socials">
+						<li class="c-registration__socials-item">
+							<a class="c-registration__socials-link" style="background-image: url({{ 'tm-icon.png' | img_asset }})" href="#"></a>
+						</li>
+						<li class="c-registration__socials-item">
+							<a class="c-registration__socials-link" style="background-image: url({{ 'vk-icon.png' | img_asset }})" href="#"></a>
+						</li>
+						<li class="c-registration__socials-item">
+							<a class="c-registration__socials-link" style="background-image: url({{ 'fb-icon.png' | img_asset }})" href="#"></a>
+						</li>
+						<li class="c-registration__socials-item">
+							<a class="c-registration__socials-link" style="background-image: url({{ 'tw-icon.png' | img_asset }})" href="#"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
