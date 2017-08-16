@@ -92,6 +92,17 @@ $(document).ready(function() {
   	subnavList.toggleClass(subnavClass);
   });
 	
+	$('.c-programm__item-title').on('click', function(event) {
+		event.preventDefault();
+
+		$('.c-popup__overlay').fadeIn();
+		$('.c-popup').css({ 'top': event.pageY, 'left': event.pageX });
+	});
+
+	$(document).on('click', function(event) {
+		if (event.target == $('.c-popup__overlay')[0]) $('.c-popup__overlay').fadeOut();
+	});
+
 });
 (function() {
 	var video = document.getElementById('video-bg');
