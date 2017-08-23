@@ -1,0 +1,30 @@
+.c-cases {
+	
+	&__item {
+		display: flex;
+		flex-wrap: nowrap;
+		margin-bottom: 40px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__col {
+
+		&--left {
+			width: 100%;
+			background-color: #fff;
+			border-right: 1px solid #ececed;
+		}
+
+		&--right {
+			flex-basis: 300px;
+			flex-shrink: 0;
+
+			&.c-partners__item {
+				margin: 0;
+			}
+		}
+	}
+}

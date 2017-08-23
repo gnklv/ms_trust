@@ -20,6 +20,16 @@
 				"description": "Международный онлайн форум по безопасности от Microsoft",
 				"og": true
 			}
+		},
+		{
+			"name": "cases",
+			"route": "/cases",
+			"pageData": ["index"],
+			"pageVars": {
+				"title": "Путь к безопасности бизнеса: You trust IT. MS Russia",
+				"description": "Международный онлайн форум по безопасности от Microsoft",
+				"og": true
+			}
 		}
 	]
 }

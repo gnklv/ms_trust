@@ -1,5 +1,6 @@
 {% extends layout %}
 {% block content %}
+	<canvas id="canvas-connections"></canvas>
 	
 	<div class="c-subnav">
 		<div class="c-subnav__container">
@@ -9,16 +10,10 @@
 				</button>
 				<ul class="c-subnav__list">
 					<li class="c-subnav__item">
-						<a class="c-subnav__link" href="#">О мероприятии</a>
+						<a class="c-subnav__link" href="/cases">Решения</a>
 					</li>
 					<li class="c-subnav__item">
-						<a class="c-subnav__link" href="#">Программа</a>
-					</li>
-					<li class="c-subnav__item">
-						<a class="c-subnav__link" href="#">Спикеры</a>
-					</li>
-					<li class="c-subnav__item">
-						<a class="c-subnav__link" href="#">Решения</a>
+						<a class="c-subnav__link" href="#">Материалы</a>
 					</li>
 				</ul>
 			</div>
@@ -49,32 +44,39 @@
 		<div class="c-hero__desc-wrapper">
 			<div class="c-hero__desc">
 				<div class="l-container">
-					<div class="l-flex l-flex--between">
-						<ul class="c-hero__anchors-list">
-							<li class="c-hero__anchors-item">
-								<a class="c-hero__anchors-link" href="#anchor-about">
-									<span class="c-hero__anchors-text">О&nbsp;мероприятии</span>
-								</a>
-							</li>
-							<li class="c-hero__anchors-item">
-								<a class="c-hero__anchors-link" href="#anchor-programm">
-									<span class="c-hero__anchors-text">Программа</span>
-								</a>
-							</li>
-							<li class="c-hero__anchors-item">
-								<a class="c-hero__anchors-link" href="#anchor-partners">
-									<span class="c-hero__anchors-text">Партнеры</span>
-								</a>
-							</li>
-							<li class="c-hero__anchors-item">
-								<a class="c-hero__anchors-link" href="#anchor-speakers">
-									<span class="c-hero__anchors-text">Спикеры</span>
-								</a>
-							</li>
-						</ul>
+					<div class="c-hero__desc-inner l-flex l-flex--between">
+						<div class="c-hero__anchors-wrapper">
+							<button class="c-hero__anchors-burger">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+							<ul class="c-hero__anchors-list">
+								<li class="c-hero__anchors-item">
+									<a class="c-hero__anchors-link" href="#anchor-about">
+										<span class="c-hero__anchors-text">О&nbsp;мероприятии</span>
+									</a>
+								</li>
+								<li class="c-hero__anchors-item">
+									<a class="c-hero__anchors-link" href="#anchor-programm">
+										<span class="c-hero__anchors-text">Программа</span>
+									</a>
+								</li>
+								<li class="c-hero__anchors-item">
+									<a class="c-hero__anchors-link" href="#anchor-partners">
+										<span class="c-hero__anchors-text">Партнеры</span>
+									</a>
+								</li>
+								<li class="c-hero__anchors-item">
+									<a class="c-hero__anchors-link" href="#anchor-speakers">
+										<span class="c-hero__anchors-text">Спикеры</span>
+									</a>
+								</li>
+							</ul>
+						</div>
 						<div class="c-hero__btn-wrapper">
 							<a class="c-btn" href="https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x232636182cf" target="_blank">
-								<span class="c-btn__text">Безопасная регистрация</span>
+								<span class="c-btn__text"><span class="h-hidden--xs">Безопасная  </span>регистрация</span>
 							</a>
 						</div>
 					</div>
@@ -113,41 +115,41 @@
 				</div>
 
 				<div class="l-row">
-					<div class="l-col--xs-4 c-themes__item c-themes__item--pt" data-aos="fade-up" data-aos-delay="0">
+					<div class="l-col--md-4 c-themes__item c-themes__item--pt" id="anim-svg-1" data-name="1">
 						<p class="c-themes__point">
 							Кибербезопасность
 						</p>
 						<p class="c-themes__point-text">
 							Защита данных в&nbsp;условиях возрастающей динамики бизнеса
 						</p>
-						<div class="c-themes__icon" style="background-image: url({{ 'themes-icon-1.png' | img_asset }})"></div>
+						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="0"></div>
 					</div>
-					<div class="l-col--xs-4 c-themes__item" data-aos="fade-up" data-aos-delay="100">
+					<div class="l-col--md-4 c-themes__item" id="anim-svg-2" data-name="2">
 						<p class="c-themes__point">
 							Инновации
 						</p>
 						<p class="c-themes__point-text">
 							Ключевые тренды и&nbsp;актуальные внедрения сегодняшнего дня
 						</p>
-						<div class="c-themes__icon" style="background-image: url({{ 'themes-icon-2.png' | img_asset }})"></div>
+						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="100"></div>
 					</div>
-					<div class="l-col--xs-4 c-themes__item c-themes__item--pt" data-aos="fade-up" data-aos-delay="200">
+					<div class="l-col--md-4 c-themes__item c-themes__item--pt" id="anim-svg-3" data-name="3">
 						<p class="c-themes__point">
 							Юридические аспекты
 						</p>
 						<p class="c-themes__point-text">
 							Соответствие нормам, регламентам и&nbsp;законодательству
 						</p>
-						<div class="c-themes__icon" style="background-image: url({{ 'themes-icon-3.png' | img_asset }})"></div>
+						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="200"></div>
 					</div>
 				</div>
-				<div class="c-themes__circle" data-aos="zoom-in-right"></div>
+				<div class="c-themes__circle" data-aos="fade-right"></div>
 			</div>
 		</div>
 
 		<div class="c-themes__btn">
 			<a class="c-btn c-btn--light" href="https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x232636182cf" target="_blank">
-				<span class="c-btn__text">Безопасная регистрация</span>
+				<span class="c-btn__text"><span class="h-hidden--xs">Безопасная </span>регистрация</span>
 			</a>
 		</div>
 	</section>
@@ -192,6 +194,9 @@
 							<a class="c-programm__item-title" href="#">
 								{{ item.title | safe }}
 							</a>
+							<p class="c-programm__item-popup">
+								{{ item.popup | safe }}
+							</p>
 						</div>
 						{%- if item.desc %}
 						<p class="c-programm__item-desc">
@@ -201,7 +206,14 @@
 						{%- if item.docs %}
 						<div class="c-programm__tag-wrapper">
 						{%- for doc in item.docs %}
-							<a href="{{ doc.link }}" class="c-programm__tag">{{ doc.kind }}</a>
+							<a href="{{ doc.link }}" class="c-programm__tag">
+								<span class="c-programm__tag-text">
+									{{ doc.kind }}
+								</span>
+								<div class="c-programm__tag-arrow">
+									&#129131;
+								</div> 
+							</a>
 						{%- endfor %}
 						</div>
 						{%- endif %}
@@ -212,8 +224,8 @@
 			</div>
 			
 			<div class="l-row">
-				<div class="l-col--md-6">
-					<div class="c-programm__title-wrapper">
+				<div class="l-col--lg-6">
+					<div class="c-programm__title-wrapper c-programm__title-wrapper--left">
 						<p class="c-programm__title">
 							Соответствие законодательству и&nbsp;правовым регламентам
 						</p>
@@ -246,6 +258,9 @@
 									<a class="c-programm__item-title" href="#">
 										{{ item.title | safe }}
 									</a>
+									<p class="c-programm__item-popup">
+										{{ item.popup | safe }}
+									</p>
 								</div>
 								{%- if item.desc %}
 								<p class="c-programm__item-desc">
@@ -255,7 +270,14 @@
 								{%- if item.docs %}
 								<div class="c-programm__tag-wrapper">
 								{%- for doc in item.docs %}
-									<a href="{{ doc.link }}" class="c-programm__tag">{{ doc.kind }}</a>
+									<a href="{{ doc.link }}" class="c-programm__tag">
+										<span class="c-programm__tag-text">
+											{{ doc.kind }}
+										</span>
+										<div class="c-programm__tag-arrow">
+											&#129131;
+										</div> 
+									</a>
 								{%- endfor %}
 								</div>
 								{%- endif %}
@@ -267,8 +289,8 @@
 
 				</div>
 
-				<div class="l-col--md-6">
-					<div class="c-programm__title-wrapper">
+				<div class="l-col--lg-6">
+					<div class="c-programm__title-wrapper c-programm__title-wrapper--right">
 						<p class="c-programm__title">
 							Кибербезопасность бизнеса и бизнес-процессов
 						</p>
@@ -301,6 +323,9 @@
 									<a class="c-programm__item-title" href="#">
 										{{ item.title | safe }}
 									</a>
+									<p class="c-programm__item-popup">
+										{{ item.popup | safe }}
+									</p>
 								</div>
 								{%- if item.desc %}
 								<p class="c-programm__item-desc">
@@ -310,7 +335,14 @@
 								{%- if item.docs %}
 								<div class="c-programm__tag-wrapper">
 								{%- for doc in item.docs %}
-									<a href="{{ doc.link }}" class="c-programm__tag">{{ doc.kind }}</a>
+									<a href="{{ doc.link }}" class="c-programm__tag">
+										<span class="c-programm__tag-text">
+											{{ doc.kind }}
+										</span>
+										<div class="c-programm__tag-arrow">
+											&#129131;
+										</div> 
+									</a>
 								{%- endfor %}
 								</div>
 								{%- endif %}
@@ -325,7 +357,7 @@
 
 			<div class="c-programm__title-wrapper">
 				<p class="c-programm__title">
-					Решения партнеров. Чтобы Бизнес стал Безопасным.
+					Чтобы Бизнес стал Безопасным. Решения партнеров.
 				</p>
 			</div>
 
@@ -356,6 +388,9 @@
 							<a class="c-programm__item-title" href="#">
 								{{ item.title | safe }}
 							</a>
+							<p class="c-programm__item-popup">
+								{{ item.popup | safe }}
+							</p>
 						</div>
 						{%- if item.desc %}
 						<p class="c-programm__item-desc">
@@ -365,7 +400,14 @@
 						{%- if item.docs %}
 						<div class="c-programm__tag-wrapper">
 						{%- for doc in item.docs %}
-							<a href="{{ doc.link }}" class="c-programm__tag">{{ doc.kind }}</a>
+							<a href="{{ doc.link }}" class="c-programm__tag">
+								<span class="c-programm__tag-text">
+									{{ doc.kind }}
+								</span>
+								<div class="c-programm__tag-arrow">
+									&#129131;
+								</div> 
+							</a>
 						{%- endfor %}
 						</div>
 						{%- endif %}
@@ -396,7 +438,7 @@
 							<p class="c-partners__text">
 								{{ item.text | safe }}
 							</p>
-							<a class="c-partners__link" href="#">Подробнее</a>
+							<a class="c-partners__link" href="/cases#{{ item.id }}">Подробнее</a>
 						</div>
 					</div>
 					{%- endfor %}
@@ -431,7 +473,7 @@
 	
 	<section class="c-registration">
 		<div class="l-container">
-			<div class="l-flex l-flex--between">
+			<div class="c-registration__row">
 				<div class="c-registration__col--left">
 					<p class="c-registration__title">Присоединяйтесь!</p>
 					<p class="c-registration__text">
@@ -443,7 +485,7 @@
 				<div class="c-registration__col--right l-flex l-flex--col">
 					<div class="c-registration__date-wrapper">
 						<a class="c-btn" href="https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x232636182cf" target="_blank">
-							<span class="c-btn__text">Безопасная регистрация</span>
+							<span class="c-btn__text"><span class="h-hidden--lg">Безопасная </span>регистрация</span>
 						</a>
 					</div>
 					<ul class="c-registration__socials">
@@ -467,10 +509,9 @@
 	
 	<div class="c-popup__overlay" style="display: none;">
 		<div class="c-popup">
-			<p class="c-popup__content">
-				Развитие новой гибридной IT-инфраструктуры требует современных решений по&nbsp;ее&nbsp;защите. Пользователям нужно одновременно повышать уровень информационной безопасности, чтобы противостоять новым угрозам, и&nbsp;снижать расходы. Выходом из&nbsp;этого противоречия является использование новых средств защиты, интегрированных в&nbsp;ОС и&nbsp;системы управления, обеспечивающих безопасность собственного виртуализированного ЦОД и&nbsp;публичных облаков. 5nine Software совместно с&nbsp;Microsoft уже 8&nbsp;лет работает над развитием средств защиты и&nbsp;управления виртуализацией для Windows Server, System Center, Azure. Более 100 тысяч пользователей по&nbsp;всему миру защищают и&nbsp;управляют гибридной облачной платформой Microsoft при помощи решений 5nine Software. Бражников Юрий&nbsp;&mdash; директор 5nine Software в&nbsp;России и&nbsp;СНГ, расскажет о&nbsp;лучших мировых практиках&nbsp;ИБ для современных компаний, предоставлении Безопасности как услуги (SECaaS) и&nbsp;выполнении требований российских и&nbsp;мировых регуляторов, таких как 152-ФЗ &laquo;О&nbsp;персональных данных&raquo;, PCI&nbsp;DSS и&nbsp;других.
-			</p>
+			<button class="c-popup__close"><span class="c-popup__close-icon"></span></button>
+			<p class="c-popup__content"></p>
 		</div>
 	</div>
-
+	
 {% endblock %}

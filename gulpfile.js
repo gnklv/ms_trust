@@ -175,11 +175,19 @@ gulp.task('copyStatic', () => {
 
 });
 
+gulp.task('makePHP', cb => {
+  exec(`echo "<?php header('location: /index.html'); ?>" >> ${config.buildDir}/index.php`, (err, stdout, stderr) => {
+    cb(err);
+  });
+});
+
 gulp.task('publish', ['compileHtml'], (cb) => {
   runSequence('clean',
               'exportHTML',
+              'makePHP',
               ['less:prod', 'js'],
               'copyStatic',
               cb)
 });
+
 //gulp.task('publish', ['exportHTML', 'copyStatic']);

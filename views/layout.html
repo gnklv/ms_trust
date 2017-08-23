@@ -35,7 +35,10 @@
       <!-- include liveReload only in Dev server -->
       <script src="//localhost:35729/livereload.js"></script>
     {%- endif %}
+    <script src="{{ 'animationData.js'|js_asset }}"></script>
+    <script src="{{ 'movinPlugin.js'|js_asset }}"></script>
     <script src="{{ 'jquery.waypoints.min.js'|js_asset }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
     <script src="{{ 'aos.js'|js_asset }}"></script>
     <script src="{{ 'slick.min.js'|js_asset }}"></script>
     <script src="{{ 'ms_js.js'|js_asset }}"></script>

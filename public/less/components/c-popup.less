@@ -7,6 +7,7 @@
 
 	&__overlay {
 		position: absolute;
+		z-index: 2;
 		top: 0;
 		right: 0;
 		bottom: 0;
@@ -18,5 +19,54 @@
 		font-weight: 100;
 		letter-spacing: .01em;
 		color: #231f20;
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		width: 33px;
+		height: 33px;
+		padding: 0;
+		border: 0;
+		outline: none;
+		background: transparent;
+		cursor: pointer;
+
+		&:active {
+			transform: scale(.92);
+		}
+
+		&-icon {
+			position: relative;
+			display: block;
+			margin: auto;
+			width: 16px;
+			height: 16px;
+			transform: rotate(45deg);
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: 1px;
+				height: 100%;
+				background-color: #588ebe;
+				transform: translateX(-50%);
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 100%;
+				height: 1px;
+				background-color: #588ebe;
+				transform: translateY(-50%);
+			}
+		}
 	}
 }

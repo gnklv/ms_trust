@@ -1,0 +1,54 @@
+{% extends layout %}
+{% block content %}
+	
+	<div class="c-subnav">
+		<div class="c-subnav__container">
+			<div class="c-subnav__inner">
+				<button class="c-subnav__title">
+					You trust IT!
+				</button>
+				<ul class="c-subnav__list">
+					<li class="c-subnav__item">
+						<a class="c-subnav__link" href="/cases">Решения</a>
+					</li>
+					<li class="c-subnav__item">
+						<a class="c-subnav__link" href="#">Материалы</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<section class="c-registration">
+		<div class="l-container">
+			<p class="c-registration__title">Решения</p>
+			<p class="c-registration__text">
+				Партнерские решения и мастер-классы
+			</p>
+		</div>
+	</section>
+
+	<div class="c-partners">
+		<div class="l-container">
+			{%- for item in index.partners %}
+			<div class="c-cases__item" id="{{ item.id }}">
+				<div class="c-cases__col c-cases__col--left">
+					
+				</div>
+				<div class="c-cases__col c-cases__col--right c-partners__item">
+					<div class="c-partners__img-wrapper">
+						<div class="c-partners__img" style="background-image: url({{ item.img | img_asset }})"></div>
+					</div>
+					<div class="c-partners__content">
+						<p class="c-partners__text">
+							{{ item.text | safe }}
+						</p>
+						<a class="c-partners__link" href="#">Подробнее</a>
+					</div>
+					</div>
+			</div>
+			{%- endfor %}
+		</div>
+	</div>
+
+{% endblock %}
