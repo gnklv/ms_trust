@@ -1,23 +1,7 @@
 {% extends layout %}
 {% block content %}
 	
-	<div class="c-subnav">
-		<div class="c-subnav__container">
-			<div class="c-subnav__inner">
-				<button class="c-subnav__title">
-					You trust IT!
-				</button>
-				<ul class="c-subnav__list">
-					<li class="c-subnav__item">
-						<a class="c-subnav__link" href="/cases">Решения</a>
-					</li>
-					<li class="c-subnav__item">
-						<a class="c-subnav__link" href="#">Материалы</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	{% include "blocks/subnav.html" %}
 	
 	<section class="c-registration">
 		<div class="l-container">

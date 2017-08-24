@@ -193,19 +193,6 @@ $(document).ready(function() {
 		}
 
   });
-
-
-	subnavList = $('.c-subnav__list');
-	subnavTitle = $('.c-subnav__title');
-	subnavClass = 'c-subnav__list--show';
-
-  /*if (subnavList.hasClass(subnavClass)) {
-		subnavList.removeClass(subnavClass);
-	}*/
-
-  subnavTitle.on('click', function() {
-  	subnavList.toggleClass(subnavClass);
-  });
 	
 	$('.c-programm__item-title').on('click', function(event) {
 		event.preventDefault();
