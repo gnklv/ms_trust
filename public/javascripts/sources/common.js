@@ -127,17 +127,19 @@ $(document).ready(function() {
 	  ]
 	};
 
-	partnersSlider.slick(slickOpts);
+	if (partnersSlider.length > 0) partnersSlider.slick(slickOpts);
 
-	speakersSlider
-		.on('init', function(event, slick) {
-			$('.c-speakers__item.slick-active').addClass('fade');
-		})	
-		.slick(slickOpts)
-		.on('afterChange', function(event, slick, currentSlide, nextSlide) {
-			$('.c-speakers__item').removeClass('fade active');
-			$('.c-speakers__item.slick-active').addClass('fade');
-		});
+	if (speakersSlider.length > 0) {
+		speakersSlider
+			.on('init', function(event, slick) {
+				$('.c-speakers__item.slick-active').addClass('fade');
+			})	
+			.slick(slickOpts)
+			.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+				$('.c-speakers__item').removeClass('fade active');
+				$('.c-speakers__item.slick-active').addClass('fade');
+			});
+	}
 
 	speaker = $('.c-speakers__item');
 
@@ -150,22 +152,24 @@ $(document).ready(function() {
 	top_spacing = 15;
 	waypoint_offset = 50;
 
-	stickyWrapper.waypoint({
-		handler: function(direction) {
-			if(direction == 'down') {
-				sticky.addClass('sticky')
-							.css('top', -sticky.outerHeight())
-							.animate({'top': 0});
-			} else {
-				sticky.removeClass('sticky')
-							.css('top', 'auto' )
-							.animate({'top': 'auto'});
+	if (stickyWrapper.length > 0) {
+		stickyWrapper.waypoint({
+			handler: function(direction) {
+				if(direction == 'down') {
+					sticky.addClass('sticky')
+								.css('top', -sticky.outerHeight())
+								.animate({'top': 0});
+				} else {
+					sticky.removeClass('sticky')
+								.css('top', 'auto' )
+								.animate({'top': 'auto'});
+				}
+			},
+			offset: function() {
+				return -(sticky.outerHeight() + waypoint_offset);
 			}
-		},
-		offset: function() {
-			return -(sticky.outerHeight() + waypoint_offset);
-		}
-	});
+		});
+	}
 
 
 	anchorLink = $('.c-hero__anchors-link');
@@ -210,7 +214,7 @@ $(document).ready(function() {
 		$('.c-popup__content').html($(this).next().html());
 
 		$('.c-popup__overlay').fadeIn();
-		$('.c-popup').css({ 'top': event.pageY, 'left': event.pageX });
+		$('.c-popup').css({ 'top': $(this).offset().top + $(this).outerHeight(), 'left': $(this).offset().left });
 	});
 
 	$(document).on('click', function(event) {
@@ -227,7 +231,7 @@ $(document).ready(function() {
 (function() {
 	var video = document.getElementById('video-bg');
 
-	video.addEventListener('loadedmetadata', init);
+	if (video) video.addEventListener('loadedmetadata', init);
 
 	function init() {
 		video.removeEventListener('loadedmetadata', init);

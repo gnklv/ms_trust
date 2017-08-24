@@ -1,5 +1,11 @@
 .c-cases {
+	padding: 100px 0 100px;
+	background-color: rgba(180, 180, 180, 0.2);
 	
+	@media screen and (max-width: @screen-md) {
+		padding: 60px 0 60px
+	}
+
 	&__item {
 		display: flex;
 		flex-wrap: nowrap;
@@ -8,22 +14,115 @@
 		&:last-child {
 			margin-bottom: 0;
 		}
+
+		@media screen and (max-width: @screen-md) {
+			flex-direction: column;
+		}
 	}
 
 	&__col {
+		padding: 40px;
+
+		@media screen and (max-width: @screen-sm) {
+			padding: 20px;
+		}
 
 		&--left {
 			width: 100%;
 			background-color: #fff;
 			border-right: 1px solid #ececed;
+
+			@media screen and (max-width: @screen-md) {
+				order: 2;
+				border-right: 0;
+				border-top: 1px solid #ececed;
+			}
 		}
 
 		&--right {
+			display: flex;
 			flex-basis: 300px;
 			flex-shrink: 0;
+			background-color: #fff;
 
-			&.c-partners__item {
-				margin: 0;
+			@media screen and (max-width: @screen-md) {
+				flex-basis: auto;
+				order: 1;
+			}
+		}
+	}
+
+	&__img {
+		display: inline-block;
+		width: 100%;
+		max-width: 300px;
+		height: 125px;
+		margin: auto;
+		vertical-align: middle;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+
+	&__title {
+		margin-bottom: round(20/30em, 3);
+		.fz(30, 34);
+		font-weight: 100;
+
+		@media screen and (max-width: @screen-md) {
+			.fz(24, 28);
+		}
+	}
+
+	&__text {
+		margin-bottom: round(20/16em, 3);
+		.fz(16, 18);
+		font-weight: 100;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		padding: 14px 35px;
+		background-color: #fff;
+		border: 2px solid #4fc8fa;
+		text-decoration: none;
+		
+		&-text {
+			position: relative;
+			z-index: 2;
+			.fz(17, 20);
+			font-family: @base-font;
+			font-weight: 400;
+			letter-spacing: .05em;
+			color: #005c9c;
+			text-transform: uppercase;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 50%;
+			left: 50%;
+			width: 0;
+			height: 110%;
+			background: darken(#4fc8fa, 20%);
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: width .5s, opacity .5s;
+		}
+
+		&:hover,
+		&:focus {
+			
+			.c-cases__link-text {
+				color: #fff;
+			}
+
+			&::before {
+				width: 100%;
+				opacity: 1;
 			}
 		}
 	}

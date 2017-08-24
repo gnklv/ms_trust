@@ -28,24 +28,29 @@
 		</div>
 	</section>
 
-	<div class="c-partners">
+	<div class="c-cases">
 		<div class="l-container">
 			{%- for item in index.partners %}
-			<div class="c-cases__item" id="{{ item.id }}">
+			<div class="c-cases__item" id="{{ item.id }}" data-aos="fade-left">
+
 				<div class="c-cases__col c-cases__col--left">
-					
+					<p class="c-cases__title">
+						{{ item.title | safe }}
+					</p>
+					<p class="c-cases__text">
+						{{ item.text | safe }}
+					</p>
+					<a class="c-cases__link" href="#">
+						<span class="c-cases__link-text">
+							Заказать
+						</span>
+					</a>
 				</div>
-				<div class="c-cases__col c-cases__col--right c-partners__item">
-					<div class="c-partners__img-wrapper">
-						<div class="c-partners__img" style="background-image: url({{ item.img | img_asset }})"></div>
-					</div>
-					<div class="c-partners__content">
-						<p class="c-partners__text">
-							{{ item.text | safe }}
-						</p>
-						<a class="c-partners__link" href="#">Подробнее</a>
-					</div>
-					</div>
+
+				<div class="c-cases__col c-cases__col--right">
+					<div class="c-cases__img" style="background-image: url({{ item.img | img_asset }})"></div>
+				</div>
+
 			</div>
 			{%- endfor %}
 		</div>
