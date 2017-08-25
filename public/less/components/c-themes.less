@@ -38,10 +38,15 @@
 	}
 
 	&__text {
+		margin-bottom: round(15/18em, 3);
 		.fz(18, 26);
 		font-weight: 100;
 		letter-spacing: .01em;
 		color: #231f20;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
 
 		@media screen and (max-width: @screen-xs) {
 			.fz(16, 20);

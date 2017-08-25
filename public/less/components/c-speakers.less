@@ -172,9 +172,18 @@
     filter: grayscale(100%);
     filter: gray;
 		transition: opacity .5s;
+		pointer-events: none;
+
+		&.clickable {
+
+			&::after {
+				display: block;
+			}
+		}
 
 		&::after {
 			content: '';
+			display: none;
 			position: absolute;
 			left: 50%;
 			bottom: 20px;
@@ -220,8 +229,11 @@
 		}
 
 		&.slick-active {
-			pointer-events: all;
 			filter: none;
+
+			&.clickable {
+				pointer-events: all;
+			}
 		}
 	}
 

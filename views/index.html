@@ -7,8 +7,8 @@
 	<section class="c-hero">
 		<div class="c-bgvideo__video-wrapper">
 			<video class="c-bgvideo__video" id="video-bg" muted playsinline poster="{{ 'hero-bg.jpg' | img_asset }}">
-				<source src="https://jetmstrust.herokuapp.com/video/hero_video.webm" type="video/webm">
-				<source src="https://jetmstrust.herokuapp.com/video/hero_video.mp4" type="video/mp4">
+				<source src="https://msbusiness.blob.core.windows.net/mssecurity/hero_video.webm" type="video/webm">
+				<source src="https://msbusiness.blob.core.windows.net/mssecurity/hero_video.mp4" type="video/mp4">
 			</video>
 		</div>
 		<div class="l-container">
@@ -76,7 +76,7 @@
 					О&nbsp;мероприятии
 				</h2>
 				<p class="c-themes__subtitle">
-					Безопасность&nbsp;&mdash; это ключ к&nbsp;защите вашего бизнеса.
+					Пора изменить наши взгляды на&nbsp;безопасность
 				</p>
 
 				<div class="l-row c-themes__item--mb">
@@ -85,12 +85,13 @@
 							К&nbsp;безопасности бизнеса нужно подходить также ответственно, как и&nbsp;к&nbsp;его управлению целиком. Учитывать баланс между возможными внешними угрозами, доходностью организации и&nbsp;рисками потери важной бизнес-информации, включая персональные данные.
 						</p>
 						<p class="c-themes__text">
-							Масштабная кибератака может привести к&nbsp;потере клиентов, снизить прибыль, испортить отношения с&nbsp;партнерами и&nbsp;учредителями, а&nbsp;несоответствие требованиям законодательства&nbsp;&mdash; привести к&nbsp;существенным штрафам и&nbsp;блокировке ресурсов.
+							Управление серверной и&nbsp;клиентской инфраструктурой, уязвимыми бизнес-процессами и&nbsp;критически важной для бизнеса информацией прямо влияет на&nbsp;будущее развитие вашего бизнеса.
+							Масштабная кибератака может привести к&nbsp;потере клиентов, снизить прибыль, испортить отношения с&nbsp;партнерами и&nbsp;учредителями,
 						</p>
 					</div>
 					<div class="l-col--md-6">
 						<p class="c-themes__text">
-							Управление серверной и&nbsp;клиентской инфраструктурой, уязвимыми бизнес-процессами и&nbsp;критически важной для бизнеса информацией прямо влияет на&nbsp;будущее развитие вашего бизнеса.
+							а&nbsp;несоответствие требованиям законодательства&nbsp;&mdash; привести к&nbsp;существенным штрафам и&nbsp;блокировке ресурсов.
 						</p>
 						<p class="c-themes__text">
 							На&nbsp;форуме мы&nbsp;расскажем о&nbsp;ключевых тенденциях в&nbsp;области цифровой безопасности, о&nbsp;современных интеллектуальных методах защиты информации и&nbsp;предотвращении утечек бизнес-критичных данных. Особое внимание мы&nbsp;уделим юридическим аспектам, связанным с&nbsp;соответствием европейскому регламенту по&nbsp;сбору и&nbsp;использованию персональных данных (GDPR), а&nbsp;также сравним его с&nbsp;локальным законодательством.
@@ -141,9 +142,6 @@
 	<section class="c-programm" id="anchor-programm">
 		<div class="l-container">
 			<h2 class="c-title">Программа форума</h2>
-			<!-- <div class="c-programm__divider">
-				<span class="c-programm__icon" style="background-image: url({{ 'divider-icon-start.png' | img_asset }})"></span>
-			</div> -->
 			
 			<div class="c-programm__title-wrapper">
 				<p class="c-programm__title">
@@ -175,12 +173,20 @@
 						<p class="c-programm__item-break">Перерыв</p>
 						{%- else %}
 						<div class="c-programm__item-title-wrapper">
-							<a class="c-programm__item-title" href="#">
+							{%- if item.popup %}
+							<a class="c-programm__item-title clickable"
+								href="#">
 								{{ item.title | safe }}
 							</a>
 							<p class="c-programm__item-popup">
 								{{ item.popup | safe }}
 							</p>
+							{%- else %}
+							<a class="c-programm__item-title"
+								href="#">
+								{{ item.title | safe }}
+							</a>
+							{%- endif %}
 						</div>
 						{%- if item.desc %}
 						<p class="c-programm__item-desc">
@@ -211,7 +217,7 @@
 				<div class="l-col--lg-6">
 					<div class="c-programm__title-wrapper c-programm__title-wrapper--left">
 						<p class="c-programm__title">
-							Соответствие законодательству и&nbsp;правовым регламентам
+							Законодательство и&nbsp;правовые регламенты
 						</p>
 					</div>
 					
@@ -239,12 +245,20 @@
 								<p class="c-programm__item-break">Перерыв</p>
 								{%- else %}
 								<div class="c-programm__item-title-wrapper">
-									<a class="c-programm__item-title" href="#">
+									{%- if item.popup %}
+									<a class="c-programm__item-title clickable"
+										href="#">
 										{{ item.title | safe }}
 									</a>
 									<p class="c-programm__item-popup">
 										{{ item.popup | safe }}
 									</p>
+									{%- else %}
+									<a class="c-programm__item-title"
+										href="#">
+										{{ item.title | safe }}
+									</a>
+									{%- endif %}
 								</div>
 								{%- if item.desc %}
 								<p class="c-programm__item-desc">
@@ -304,12 +318,20 @@
 								<p class="c-programm__item-break">Перерыв</p>
 								{%- else %}
 								<div class="c-programm__item-title-wrapper">
-									<a class="c-programm__item-title" href="#">
+									{%- if item.popup %}
+									<a class="c-programm__item-title clickable"
+										href="#">
 										{{ item.title | safe }}
 									</a>
 									<p class="c-programm__item-popup">
 										{{ item.popup | safe }}
 									</p>
+									{%- else %}
+									<a class="c-programm__item-title"
+										href="#">
+										{{ item.title | safe }}
+									</a>
+									{%- endif %}
 								</div>
 								{%- if item.desc %}
 								<p class="c-programm__item-desc">
@@ -369,12 +391,20 @@
 						<p class="c-programm__item-break">Перерыв</p>
 						{%- else %}
 						<div class="c-programm__item-title-wrapper">
-							<a class="c-programm__item-title" href="#">
+							{%- if item.popup %}
+							<a class="c-programm__item-title clickable"
+								href="#">
 								{{ item.title | safe }}
 							</a>
 							<p class="c-programm__item-popup">
 								{{ item.popup | safe }}
 							</p>
+							{%- else %}
+							<a class="c-programm__item-title"
+								href="#">
+								{{ item.title | safe }}
+							</a>
+							{%- endif %}
 						</div>
 						{%- if item.desc %}
 						<p class="c-programm__item-desc">
@@ -437,7 +467,11 @@
 			<div class="c-speakers__inner">
 				<div class="c-speakers__slider">
 					{%- for item in index.speakers %}
-					<div class="c-speakers__item">
+					<div class="c-speakers__item
+					{%- if item.desc %}
+					clickable
+					{%- endif %}
+					">
 						<div class="c-speakers__photo" style="background-image: url({{ item.img | img_asset }})"></div>
 						<div class="c-speakers__content">
 							<p class="c-speakers__name">{{ item.name }}</p>
