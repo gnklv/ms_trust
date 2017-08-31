@@ -174,16 +174,14 @@
 						{%- else %}
 						<div class="c-programm__item-title-wrapper">
 							{%- if item.popup %}
-							<a class="c-programm__item-title clickable"
-								href="#">
+							<a class="c-programm__item-title clickable" href="#">
 								{{ item.title | safe }}
 							</a>
 							<p class="c-programm__item-popup">
 								{{ item.popup | safe }}
 							</p>
 							{%- else %}
-							<a class="c-programm__item-title"
-								href="#">
+							<a class="c-programm__item-title" href="#">
 								{{ item.title | safe }}
 							</a>
 							{%- endif %}
@@ -246,16 +244,14 @@
 								{%- else %}
 								<div class="c-programm__item-title-wrapper">
 									{%- if item.popup %}
-									<a class="c-programm__item-title clickable"
-										href="#">
+									<a class="c-programm__item-title clickable" href="#">
 										{{ item.title | safe }}
 									</a>
 									<p class="c-programm__item-popup">
 										{{ item.popup | safe }}
 									</p>
 									{%- else %}
-									<a class="c-programm__item-title"
-										href="#">
+									<a class="c-programm__item-title" href="#">
 										{{ item.title | safe }}
 									</a>
 									{%- endif %}
@@ -319,16 +315,14 @@
 								{%- else %}
 								<div class="c-programm__item-title-wrapper">
 									{%- if item.popup %}
-									<a class="c-programm__item-title clickable"
-										href="#">
+									<a class="c-programm__item-title clickable" href="#">
 										{{ item.title | safe }}
 									</a>
 									<p class="c-programm__item-popup">
 										{{ item.popup | safe }}
 									</p>
 									{%- else %}
-									<a class="c-programm__item-title"
-										href="#">
+									<a class="c-programm__item-title" href="#">
 										{{ item.title | safe }}
 									</a>
 									{%- endif %}
@@ -392,16 +386,14 @@
 						{%- else %}
 						<div class="c-programm__item-title-wrapper">
 							{%- if item.popup %}
-							<a class="c-programm__item-title clickable"
-								href="#">
+							<a class="c-programm__item-title clickable" href="#">
 								{{ item.title | safe }}
 							</a>
 							<p class="c-programm__item-popup">
 								{{ item.popup | safe }}
 							</p>
 							{%- else %}
-							<a class="c-programm__item-title"
-								href="#">
+							<a class="c-programm__item-title" href="#">
 								{{ item.title | safe }}
 							</a>
 							{%- endif %}
@@ -467,11 +459,7 @@
 			<div class="c-speakers__inner">
 				<div class="c-speakers__slider">
 					{%- for item in index.speakers %}
-					<div class="c-speakers__item
-					{%- if item.post %}
-					clickable
-					{%- endif %}
-					">
+					<div class="c-speakers__item {%- if item.post %} clickable{%- endif %}">
 						<div class="c-speakers__photo" style="background-image: url({{ item.img | img_asset }})"></div>
 						<div class="c-speakers__content">
 							<p class="c-speakers__name">{{ item.name }}</p>
@@ -532,4 +520,19 @@
 		</div>
 	</div>
 	
+	<div style="display: none">
+		<div class="c-modal">
+			<button class="c-modal__close arcticmodal-close"><span class="c-modal__close-icon"></span></button>
+			<div class="c-modal__row">
+				<div class="c-modal__col-photo">
+					<div class="c-speakers__photo c-modal__photo"></div>
+				</div>
+				<div class="c-modal__col-content">
+					<p class="c-speakers__name c-modal__name"></p>
+					<p class="c-speakers__post c-modal__post"></p>
+					<p class="c-speakers__desc c-modal__desc"></p>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

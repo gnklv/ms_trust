@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var animApp, 
-			speaker, 
+			speaker, modal, btnCloseModal,
 			burgerBtn,
 			partnersSlider, speakersSlider, slickOpts,
 			sticky, stickyWrapper, top_spacing, waypoint_offset, 
@@ -142,9 +142,22 @@ $(document).ready(function() {
 	}
 
 	speaker = $('.c-speakers__item');
+	modal = $('.c-modal');
+	btnCloseModal = $('.c-modal__close');
 
 	speaker.on('click', function() {
-		$(this).toggleClass('active');
+		var urlImg = $(this).find('.c-speakers__photo')[0].style.backgroundImage,
+				nameSpeaker = $(this).find('.c-speakers__name').html(),
+				postSpeaker = $(this).find('.c-speakers__post').html(),
+				descSpeaker = $(this).find('.c-speakers__desc').html();
+
+		
+		modal.find('.c-modal__photo').css('background-image', urlImg);
+		modal.find('.c-modal__name').html(nameSpeaker);
+		modal.find('.c-modal__post').html(postSpeaker);
+		modal.find('.c-modal__desc').html(descSpeaker);
+		
+		modal.arcticmodal();
 	});
 
 	sticky = $('.c-hero__desc');
@@ -381,3 +394,29 @@ $(document).ready(function() {
 		}
 	});
 })();
+
+function getScrollBarWidth () {
+  let inner = document.createElement('p');
+  inner.style.width = "100%";
+  inner.style.height = "200px";
+
+  let outer = document.createElement('div');
+  outer.style.position = "absolute";
+  outer.style.top = "0px";
+  outer.style.left = "0px";
+  outer.style.visibility = "hidden";
+  outer.style.width = "200px";
+  outer.style.height = "150px";
+  outer.style.overflow = "hidden";
+  outer.appendChild (inner);
+
+  document.body.appendChild (outer);
+  let w1 = inner.offsetWidth;
+  outer.style.overflow = 'scroll';
+  let w2 = inner.offsetWidth;
+  if (w1 == w2) w2 = outer.clientWidth;
+
+  document.body.removeChild (outer);
+
+  return w1 - w2;
+}
