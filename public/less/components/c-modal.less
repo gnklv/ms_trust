@@ -5,6 +5,16 @@
 	margin: 0 auto;
 	background-color: #fff;
 
+	&::before,
+	&::after {
+	  content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+	}
+
 	@media screen and (max-width: @screen-md) {
 		width: 100%;
 	}
@@ -51,6 +61,7 @@
 
 	&__close {
 		position: absolute;
+		z-index: 1;
 		top: 0;
 		right: 0;
 		display: flex;
@@ -117,6 +128,9 @@
 			@media screen and (max-width: @screen-md) {
 				margin-right: 0;
 			}
+		}
+
+		&-content {
 		}
 	}
 	

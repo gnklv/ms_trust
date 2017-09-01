@@ -37,22 +37,22 @@
 							</button>
 							<ul class="c-hero__anchors-list">
 								<li class="c-hero__anchors-item">
-									<a class="c-hero__anchors-link" href="#anchor-about">
+									<a class="c-hero__anchors-link anchor" href="#anchor-about">
 										<span class="c-hero__anchors-text">О&nbsp;мероприятии</span>
 									</a>
 								</li>
 								<li class="c-hero__anchors-item">
-									<a class="c-hero__anchors-link" href="#anchor-programm">
+									<a class="c-hero__anchors-link anchor" href="#anchor-programm">
 										<span class="c-hero__anchors-text">Программа</span>
 									</a>
 								</li>
-								<li class="c-hero__anchors-item">
-									<a class="c-hero__anchors-link" href="#anchor-partners">
+								<!-- <li class="c-hero__anchors-item">
+									<a class="c-hero__anchors-link anchor" href="#anchor-partners">
 										<span class="c-hero__anchors-text">Партнеры</span>
 									</a>
-								</li>
+								</li> -->
 								<li class="c-hero__anchors-item">
-									<a class="c-hero__anchors-link" href="#anchor-speakers">
+									<a class="c-hero__anchors-link anchor" href="#anchor-speakers">
 										<span class="c-hero__anchors-text">Спикеры</span>
 									</a>
 								</li>
@@ -430,28 +430,28 @@
 		</div>
 	</section>
 
-	<section class="c-partners" id="anchor-partners">
-		<div class="l-container">
-			<h2 class="c-title c-title--def">Партнерские решения</h2>
-			<div class="c-partners__inner">
-				<div class="c-partners__slider">
-					{%- for item in index.partners %}
-					<div class="c-partners__item">
-						<div class="c-partners__img-wrapper">
-							<div class="c-partners__img" style="background-image: url({{ item.img | img_asset }})"></div>
-						</div>
-						<div class="c-partners__content">
-							<p class="c-partners__text">
-								{{ item.title | safe }}
-							</p>
-							<a class="c-partners__link" href="/cases#{{ item.id }}">Подробнее</a>
-						</div>
+<!-- 	<section class="c-partners" id="anchor-partners">
+	<div class="l-container">
+		<h2 class="c-title c-title--def">Партнерские решения</h2>
+		<div class="c-partners__inner">
+			<div class="c-partners__slider">
+				{%- for item in index.partners %}
+				<div class="c-partners__item">
+					<div class="c-partners__img-wrapper">
+						<div class="c-partners__img" style="background-image: url({{ item.img | img_asset }})"></div>
 					</div>
-					{%- endfor %}
+					<div class="c-partners__content">
+						<p class="c-partners__text">
+							{{ item.title | safe }}
+						</p>
+						<a class="c-partners__link" href="/cases#{{ item.id }}">Подробнее</a>
+					</div>
 				</div>
+				{%- endfor %}
 			</div>
 		</div>
-	</section>
+	</div>
+</section> -->
 
 	<section class="c-speakers" id="anchor-speakers">
 		<div class="l-container">
@@ -459,6 +459,7 @@
 			<div class="c-speakers__inner">
 				<div class="c-speakers__slider">
 					{%- for item in index.speakers %}
+					{%- if item.img %}
 					<div class="c-speakers__item {%- if item.post %} clickable{%- endif %}">
 						<div class="c-speakers__photo" style="background-image: url({{ item.img | img_asset }})"></div>
 						<div class="c-speakers__content">
@@ -471,6 +472,7 @@
 							</p>
 						</div>
 					</div>
+					{%- endif %}
 					{%- endfor %}
 				</div>
 			</div>
@@ -535,9 +537,9 @@
 									<div class="c-speakers__photo c-modal__photo"></div>
 								</div>
 								<div class="c-modal__col-content">
-									<p class="c-speakers__name c-modal__name"></p>
-									<p class="c-speakers__post c-modal__post"></p>
-									<p class="c-speakers__desc c-modal__desc"></p>
+									<p class="c-speakers__name c-modal__name" data-text=""></p>
+									<p class="c-speakers__post c-modal__post" data-text=""></p>
+									<p class="c-speakers__desc c-modal__desc" data-text=""></p>
 								</div>
 							</div>
 						</div>

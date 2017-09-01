@@ -7,6 +7,10 @@
     <meta content="" name="keywords">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="telephone=no" name="format-detection">
+    
+    {%- if locals.noindex %}
+    <meta name="robots" content="noindex">
+    {%- endif %}
 
     {%- if locals.og %}
     {%- if locals.image %}

@@ -154,10 +154,16 @@ $(document).ready(function() {
 				descSpeaker = $(this).find('.c-speakers__desc').html();
 
 		
-		modal.find('.c-modal__photo').css('background-image', urlImg);
-		modal.find('.c-modal__name').html(nameSpeaker);
-		modal.find('.c-modal__post').html(postSpeaker);
-		modal.find('.c-modal__desc').html(descSpeaker);
+		$('.c-modal__photo').css('background-image', urlImg);
+		
+		$('.c-modal__name').html(nameSpeaker);
+		$('.c-modal__name').data('text', nameSpeaker);
+
+		$('.c-modal__post').html(postSpeaker);
+		$('.c-modal__post').data('text', postSpeaker);
+
+		$('.c-modal__desc').html(descSpeaker);
+		$('.c-modal__desc').data('text', descSpeaker);
 
 		openModal(modal);
 	});
@@ -205,7 +211,7 @@ $(document).ready(function() {
 	}
 
 
-	anchorLink = $('.c-hero__anchors-link');
+	anchorLink = $('.c-hero__anchors-link.anchor');
 
 	anchorLink.on('click', function(event) {
 		var currentHref = $(this).attr('href');

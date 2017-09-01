@@ -1,0 +1,17 @@
+{% extends layout %}
+{% block content %}
+
+	{% include "blocks/subnav.html" %}
+	
+	<section class="c-hero" style="background-image: url({{ 'registration-bg.jpg' | img_asset }})">
+		<div class="l-container">
+			<p class="c-registration__title">Материалы</p>
+			<p class="c-registration__text">
+				Видеоматериалы и&nbsp;презентации <br>
+				конференции Microsoft &laquo;You Trust IT&raquo;
+			</p>
+		</div>
+		{% include "blocks/nav-anchors.html" %}
+	</section>
+
+{% endblock %}

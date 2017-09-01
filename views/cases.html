@@ -3,13 +3,14 @@
 	
 	{% include "blocks/subnav.html" %}
 	
-	<section class="c-registration">
+	<section class="c-hero" style="background-image: url({{ 'registration-bg.jpg' | img_asset }})">
 		<div class="l-container">
 			<p class="c-registration__title">Решения</p>
 			<p class="c-registration__text">
 				Партнерские решения и мастер-классы
 			</p>
 		</div>
+		{% include "blocks/nav-anchors.html" %}
 	</section>
 
 	<div class="c-cases">
