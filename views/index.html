@@ -82,7 +82,7 @@
 				<div class="l-row c-themes__item--mb">
 					<div class="l-col--md-6">
 						<p class="c-themes__text">
-							К&nbsp;безопасности бизнеса нужно подходить также ответственно, как и&nbsp;к&nbsp;его управлению целиком. Учитывать баланс между возможными внешними угрозами, доходностью организации и&nbsp;рисками потери важной бизнес-информации, включая персональные данные.
+							К&nbsp;безопасности бизнеса нужно подходить так же ответственно, как и&nbsp;к&nbsp;его управлению целиком. Учитывать баланс между возможными внешними угрозами, доходностью организации и&nbsp;рисками потери важной бизнес-информации, включая персональные данные.
 						</p>
 						<p class="c-themes__text">
 							Управление серверной и&nbsp;клиентской инфраструктурой, уязвимыми бизнес-процессами и&nbsp;критически важной для бизнеса информацией прямо влияет на&nbsp;будущее развитие вашего бизнеса.
@@ -94,7 +94,7 @@
 							а&nbsp;несоответствие требованиям законодательства&nbsp;&mdash; привести к&nbsp;существенным штрафам и&nbsp;блокировке ресурсов.
 						</p>
 						<p class="c-themes__text">
-							На&nbsp;форуме мы&nbsp;расскажем о&nbsp;ключевых тенденциях в&nbsp;области цифровой безопасности, о&nbsp;современных интеллектуальных методах защиты информации и&nbsp;предотвращении утечек бизнес-критичных данных. Особое внимание мы&nbsp;уделим юридическим аспектам, связанным с&nbsp;соответствием европейскому регламенту по&nbsp;сбору и&nbsp;использованию персональных данных (GDPR), а&nbsp;также сравним его с&nbsp;локальным законодательством.
+							На&nbsp;форуме мы&nbsp;расскажем о&nbsp;ключевых тенденциях в&nbsp;области цифровой безопасности, о&nbsp;современных интеллектуальных методах защиты информации и&nbsp;предотвращении утечек важных для бизнеса данных. Особое внимание мы&nbsp;уделим юридическим аспектам, связанным с&nbsp;соответствием европейскому регламенту по&nbsp;сбору и&nbsp;использованию персональных данных (GDPR), а&nbsp;также сравним его с&nbsp;локальным законодательством.
 						</p>
 					</div>
 				</div>
@@ -224,7 +224,7 @@
 						{%- if item.break %}
 						<div class="c-programm__item c-programm__item--disabled">
 						{%- else %}
-						<div class="c-programm__item">
+						<div class="c-programm__item c-programm__item--height">
 						{%- endif %}
 							{%- if item.connect %}
 							<div class="c-programm__connect" data-aos="zoom-in" data-aos-anchor-placement="top-center"></div>
@@ -286,7 +286,7 @@
 				<div class="l-col--lg-6">
 					<div class="c-programm__title-wrapper c-programm__title-wrapper--right">
 						<p class="c-programm__title">
-							Кибербезопасность бизнеса и бизнес-процессов
+							Кибербезопасность бизнеса и&nbsp;бизнес-процессов
 						</p>
 					</div>
 					
@@ -473,7 +473,10 @@
 					</div>
 					{%- endfor %}
 				</div>
-			</div>	
+			</div>
+			<p class="c-speakers__count">
+				<span class="c-speakers__count-cur">1</span> / <span class="c-speakers__count-all">32</span>
+			</p>
 		</div>
 	</section>
 	
@@ -520,19 +523,27 @@
 		</div>
 	</div>
 	
-	<div style="display: none">
-		<div class="c-modal">
-			<button class="c-modal__close arcticmodal-close"><span class="c-modal__close-icon"></span></button>
-			<div class="c-modal__row">
-				<div class="c-modal__col-photo">
-					<div class="c-speakers__photo c-modal__photo"></div>
-				</div>
-				<div class="c-modal__col-content">
-					<p class="c-speakers__name c-modal__name"></p>
-					<p class="c-speakers__post c-modal__post"></p>
-					<p class="c-speakers__desc c-modal__desc"></p>
-				</div>
-			</div>
-		</div>
+	<div class="c-modal__overlay">
+		<table class="c-modal__container">
+			<tbody>
+				<tr>
+					<td class="c-modal__wrapper">
+						<div class="c-modal">
+							<button class="c-modal__close"><span class="c-modal__close-icon"></span></button>
+							<div class="c-modal__row">
+								<div class="c-modal__col-photo">
+									<div class="c-speakers__photo c-modal__photo"></div>
+								</div>
+								<div class="c-modal__col-content">
+									<p class="c-speakers__name c-modal__name"></p>
+									<p class="c-speakers__post c-modal__post"></p>
+									<p class="c-speakers__desc c-modal__desc"></p>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 {% endblock %}

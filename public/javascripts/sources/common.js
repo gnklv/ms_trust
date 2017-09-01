@@ -106,7 +106,7 @@ $(document).ready(function() {
 		swipe: false,
 		responsive: [
 	    {
-	      breakpoint: 992,
+	      breakpoint: 993,
 	      settings: {
 	        dots: true,
 	        infinite: true,
@@ -115,9 +115,9 @@ $(document).ready(function() {
 	      }
 	    },
 	    {
-	      breakpoint: 768,
+	      breakpoint: 769,
 	      settings: {
-	        dots: true,
+	        dots: false,
 	        infinite: true,
 	        swipe: true,
 	        slidesToShow: 1,
@@ -133,16 +133,18 @@ $(document).ready(function() {
 		speakersSlider
 			.on('init', function(event, slick) {
 				$('.c-speakers__item.slick-active').addClass('fade');
+				$('.c-speakers__count-all').text(slick.$slides.length);
 			})	
 			.slick(slickOpts)
 			.on('afterChange', function(event, slick, currentSlide, nextSlide) {
 				$('.c-speakers__item').removeClass('fade active');
 				$('.c-speakers__item.slick-active').addClass('fade');
+				$('.c-speakers__count-cur').text(currentSlide + 1);
 			});
 	}
 
 	speaker = $('.c-speakers__item');
-	modal = $('.c-modal');
+	modal = $('.c-modal__overlay');
 	btnCloseModal = $('.c-modal__close');
 
 	speaker.on('click', function() {
@@ -156,9 +158,27 @@ $(document).ready(function() {
 		modal.find('.c-modal__name').html(nameSpeaker);
 		modal.find('.c-modal__post').html(postSpeaker);
 		modal.find('.c-modal__desc').html(descSpeaker);
-		
-		modal.arcticmodal();
+
+		openModal(modal);
 	});
+
+	btnCloseModal.on('click', function() {
+		closeModal(modal);
+	});
+
+	function openModal(el) {
+		el.addClass('open');
+
+		$('body').css({ 'overflow': 'hidden', 'margin-right': `${getScrollBarWidth()}px` });
+		$('.c-hero__desc').css('right', `${getScrollBarWidth()}px`);
+	}
+
+	function closeModal(el) {
+		el.removeClass('open');
+
+		$('body').css({'overflow': '', 'margin-right': ''});
+		$('.c-hero__desc').css('right', '');
+	}
 
 	sticky = $('.c-hero__desc');
 	stickyWrapper = $('.c-hero__desc-wrapper');
@@ -224,6 +244,14 @@ $(document).ready(function() {
 			case $('.c-popup__close')[0]:
 			case $('.c-popup__close-icon')[0]:
 				$('.c-popup__overlay').fadeOut();
+		}
+
+		switch(event.target) {
+			case $('.c-modal__overlay')[0]:
+			case $('.c-modal__wrapper')[0]:
+			case $('.c-modal__close')[0]:
+			case $('.c-modal__close-icon')[0]:
+				closeModal($('.c-modal__overlay'));
 		}
 	});
 

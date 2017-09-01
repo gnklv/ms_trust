@@ -12,6 +12,42 @@
 	@media screen and (max-width: @screen-sm) {
 		padding: 20px;
 	}
+	
+	&__overlay {
+		display: none;
+		position: fixed;
+		z-index: 4;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		background-color: rgba(0,0,0,.5);
+		border: 0;
+		border-collapse: collapse;
+		overflow: auto;
+		overflow-y: scroll;
+		animation: fade .5s;
+
+		&.open {
+			display: block;
+		}
+	}
+
+	&__container {
+		height: 100%;
+		margin: 0 auto;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	
+	&__wrapper {
+		padding: 24px;
+		margin: 0;
+		border: 0;
+		vertical-align: middle;
+	}
 
 	&__close {
 		position: absolute;
@@ -86,6 +122,11 @@
 	
 	&__photo {
 		width: 220px;
+		margin-bottom: 0;
+
+		@media screen and (max-width: @screen-md) {
+			margin-bottom: 30px;
+		}
 	}
 
 	&__post {
