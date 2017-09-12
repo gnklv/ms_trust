@@ -1,0 +1,13 @@
+{%- macro RazorInput(name, classes, export) %}
+	{%- if export %}
+		@Html.TextBox("{{ name }}", ViewData["{{ name }}"], new { @class = "{{ classes }}" })
+	{%- else %}
+		<input type="text" name="{{ name }}" class="{{ classes }}">
+	{%- endif %}
+{%- endmacro %}
+
+{%- macro RazorMsg(name, export) %}
+	{%- if export %}
+		@Html.ValidationMessage("{{ name }}")
+	{%- endif %}
+{%- endmacro %}

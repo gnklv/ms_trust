@@ -25,19 +25,19 @@ const filters = {
 		return filters.export ? config.dpe ? `@File(${path})` : `${config.buildStatic}${path}` : `${config.devStatic}${path}`
 	},
 	img_asset: path => {
-		return filters.export ? config.dpe ? `@File(\'images/${path}\')` : `${config.buildStatic}images/${path}` : `${config.devStatic}images/${path}`
+		return filters.export ? config.dpe ? `@File("/files/images/${path}")` : `${config.buildStatic}images/${path}` : `${config.devStatic}images/${path}`
 	},
 	video_asset: path => {
-		return filters.export ? config.dpe ? `@File(\'video/${path}\')` : `${config.buildStatic}video/${path}` : `${config.devStatic}video/${path}`
+		return filters.export ? config.dpe ? `@File("/files/video/${path}")` : `${config.buildStatic}video/${path}` : `${config.devStatic}video/${path}`
 	},
 	uploads: path => {
-		return filters.export ? config.dpe ? `@File(\'uploads/${path}\')` : `${config.buildStatic}uploads/${path}` : `${config.devStatic}uploads/${path}`
+		return filters.export ? config.dpe ? `@File("/files/uploads/${path}")` : `${config.buildStatic}uploads/${path}` : `${config.devStatic}uploads/${path}`
 	},
 	js_asset: path => {
-		return filters.export ? config.dpe ? `@File(\'js/${path}\')` : `${config.buildStatic}javascripts/${path}` : `${config.devStatic}javascripts/${path}`
+		return filters.export ? config.dpe ? `@File("/files/js/${path}")` : `${config.buildStatic}javascripts/${path}` : `${config.devStatic}javascripts/${path}`
 	},
 	css_asset: path => {
-		return filters.export ? config.dpe ? `@File(\'css/${path}\')` : `${config.buildStatic}stylesheets/${path}` : `${config.devStatic}stylesheets/${path}`
+		return filters.export ? config.dpe ? `@File("/files/css/${path}")` : `${config.buildStatic}stylesheets/${path}` : `${config.devStatic}stylesheets/${path}`
 	},
 	cdn: path => {
 		return filters.export ? `${config.storage}/${path}`: `${config.devStatic}storage/${path}` 

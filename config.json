@@ -51,6 +51,17 @@
 				"og": true,
 				"noindex": true
 			}
+		},
+		{
+			"name": "form",
+			"route": "/form",
+			"pageData": ["index"],
+			"layout": "form_layout.html",
+			"pageVars": {
+				"title": "Путь к безопасности бизнеса: You trust IT. MS Russia",
+				"description": "Международный онлайн форум по безопасности от Microsoft",
+				"og": true
+			}
 		}
 	]
 }
