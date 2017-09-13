@@ -3,7 +3,7 @@
 	"buildStatic": "",
 	"buildDir": "build",
 	"port": 8080,
-	"dpe": true,
+	"dpe": false,
 	"commonData": ["data"],
 	"defaultLayout": "layout.html", 
 	"emptyLayout": "empty_layout.html", 
