@@ -107,7 +107,7 @@
 						<p class="c-themes__point-text">
 							Защита данных в&nbsp;условиях возрастающей динамики бизнеса
 						</p>
-						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="0"></div>
+						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="0" data-aos-once="true"></div>
 					</div>
 					<div class="l-col--md-4 c-themes__item" id="anim-svg-2" data-name="2">
 						<p class="c-themes__point">
@@ -116,7 +116,7 @@
 						<p class="c-themes__point-text">
 							Ключевые тренды и&nbsp;актуальные внедрения сегодняшнего дня
 						</p>
-						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="100"></div>
+						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="100" data-aos-once="true"></div>
 					</div>
 					<div class="l-col--md-4 c-themes__item c-themes__item--pt" id="anim-svg-3" data-name="3">
 						<p class="c-themes__point">
@@ -125,10 +125,10 @@
 						<p class="c-themes__point-text">
 							Законодательство и правовые регламенты
 						</p>
-						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="200"></div>
+						<div class="c-themes__icon" data-aos="fade-right" data-aos-delay="200" data-aos-once="true"></div>
 					</div>
 				</div>
-				<div class="c-themes__circle" data-aos="fade-right"></div>
+				<div class="c-themes__circle" data-aos="fade-right" data-aos-once="true"></div>
 			</div>
 		</div>
 
@@ -170,7 +170,7 @@
 					</div>
 					<div class="c-programm__col c-programm__col--lg" data-aos="fade-up">
 						{%- if item.break %}
-						<p class="c-programm__item-break">Перерыв</p>
+						<p class="c-programm__item-break">{{ item.name }}</p>
 						{%- else %}
 						<div class="c-programm__item-title-wrapper">
 							{%- if item.popup %}
@@ -240,7 +240,7 @@
 							</div>
 							<div class="c-programm__col c-programm__col--lg" data-aos="fade-up">
 								{%- if item.break %}
-								<p class="c-programm__item-break">Перерыв</p>
+								<p class="c-programm__item-break">{{ item.name }}</p>
 								{%- else %}
 								<div class="c-programm__item-title-wrapper">
 									{%- if item.popup %}
@@ -311,7 +311,7 @@
 							</div>
 							<div class="c-programm__col c-programm__col--lg" data-aos="fade-up">
 								{%- if item.break %}
-								<p class="c-programm__item-break">Перерыв</p>
+								<p class="c-programm__item-break">{{ item.name }}</p>
 								{%- else %}
 								<div class="c-programm__item-title-wrapper">
 									{%- if item.popup %}
@@ -382,7 +382,7 @@
 					</div>
 					<div class="c-programm__col c-programm__col--lg" data-aos="fade-up">
 						{%- if item.break %}
-						<p class="c-programm__item-break">Перерыв</p>
+						<p class="c-programm__item-break">{{ item.name }}</p>
 						{%- else %}
 						<div class="c-programm__item-title-wrapper">
 							{%- if item.popup %}

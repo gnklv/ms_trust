@@ -30,12 +30,12 @@
 		top: 50%;
 		left: 50%;
 		z-index: 1;
-		width: 0;
+		width: 110%;
 		height: 110%;
 		background: darken(#4fc8fa, 20%);
-		transform: translate(-50%, -50%);
-		opacity: 0;
-		transition: width .5s;
+		transform: translate(-50%, -50%) scaleX(0);
+		opacity: 1;
+		transition: transform .3s;
 	}
 
 	&:hover,
@@ -46,8 +46,7 @@
 		}
 
 		&::after {
-			width: 110%;
-			opacity: 1;
+			transform: translate(-50%, -50%) scaleX(1);
 		}
 	}
 

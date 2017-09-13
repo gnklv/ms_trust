@@ -90,7 +90,6 @@
             <input type="hidden" name="PCB_Phone" id="PCB_Phone" value="No" />
             <input type="hidden" name="CB_Gov" id="CB_Gov" value="No" />
 
-            <input type="hidden" id="CaseName" name="CaseName" value="">
             <input type="hidden" id="SelectedPartners" name="SelectedPartners" value="">
 
             <div class="l-row">
@@ -196,11 +195,12 @@
 
               for (var i = 0; i < window.partners.length; i++) {
                 if (window.partners[i].id === caseID) {
-                  currentCase = window.partners[i]
+                  currentCase = window.partners[i];
                 }
               }
 
               if (!!currentCase) {
+                $('#SelectedPartners').val(currentCase.id);
                 $('.c-programm__item-title').css('display', 'block');
                 $('#partnerExistText').css('display', 'block');
                 $('#currentCaseName').css('background-image', 'url(http://mssecurity.ru/images/'+ currentCase.img +')');

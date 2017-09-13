@@ -16,15 +16,21 @@ $(document).ready(function() {
   };
 
   function createAnim (id, data, name) {
-		bodymovin.loadAnimation({
+		return bodymovin.loadAnimation({
 			container: document.querySelector('#'+ id + ' .c-themes__icon'),
 			renderer: 'svg',
 			loop: false,
-			autoplay: true,
+			autoplay: false,
 			animationData: data,
 			name: name
 		});
 	};
+
+	const anim1 = createAnim(animApp.id[0], animApp.data[0], animApp.name[0]);
+	const anim2 = createAnim(animApp.id[1], animApp.data[1], animApp.name[1]);
+	const anim3 = createAnim(animApp.id[2], animApp.data[2], animApp.name[2]);
+
+	let circleAnimations = [anim1, anim2 ,anim3]
 
 	function initAnim (id, data, name) {
 		createAnim(id, data, name);
@@ -34,32 +40,16 @@ $(document).ready(function() {
 
 	function watchAnimClass() {
 		if ($('.c-themes__item').length > 0) {
-			var currentAnimClass1 = setInterval(function() {
-				if ( $('#'+ animApp.id[0] + ' .c-themes__icon').hasClass('aos-animate') ) {
-			  	setTimeout(function() {
-			  		initAnim(animApp.id[0], animApp.data[0], animApp.name[0])
-			  	}, 200);
-			  	clearInterval(currentAnimClass1);
-				}
-			}, 100);
+			var animClass = [];
+			let items = $('.c-themes__icon');
 
-			var currentAnimClass2 = setInterval(function() {
-				if ( $('#'+ animApp.id[1] + ' .c-themes__icon').hasClass('aos-animate') ) {
-			  	setTimeout(function() {
-			  		initAnim(animApp.id[1], animApp.data[1], animApp.name[1])
-			  	}, 200);
-			  	clearInterval(currentAnimClass2);
-				}
-			}, 100);
-
-			var currentAnimClass3 = setInterval(function() {
-				if ( $('#'+ animApp.id[2] + ' .c-themes__icon').hasClass('aos-animate') ) {
-			  	setTimeout(function() {
-			  		initAnim(animApp.id[2], animApp.data[2], animApp.name[2])
-			  	}, 200);
-			  	clearInterval(currentAnimClass3);
-				}
-			}, 100);
+			items.each(function(i, el) {
+					el.addEventListener('transitionend', function(e) {
+						if(e.propertyName === 'opacity') {
+							circleAnimations[i].goToAndPlay(0)
+						}
+					})
+			})
 		}
 	};
 
