@@ -16,14 +16,16 @@ $(document).ready(function() {
   };
 
   function createAnim (id, data, name) {
-		return bodymovin.loadAnimation({
-			container: document.querySelector('#'+ id + ' .c-themes__icon'),
-			renderer: 'svg',
-			loop: false,
-			autoplay: false,
-			animationData: data,
-			name: name
-		});
+  	if (document.querySelector('#'+ id + ' .c-themes__icon')) {
+			return bodymovin.loadAnimation({
+				container: document.querySelector('#'+ id + ' .c-themes__icon'),
+				renderer: 'svg',
+				loop: false,
+				autoplay: false,
+				animationData: data,
+				name: name
+			});
+  	}
 	};
 
 	const anim1 = createAnim(animApp.id[0], animApp.data[0], animApp.name[0]);

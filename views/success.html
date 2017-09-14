@@ -1,0 +1,53 @@
+<!doctype html>
+<!--[if IE 7]>
+<html class="ie7 lt-ie10 lt-ie9 lt-ie8 no-js" lang="ru"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8 lt-ie10 lt-ie9 no-js" lang="ru"><![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9 lt-ie10 no-js" lang="ru"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="ru">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>You Trust IT</title>
+  <meta content="" name="author">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="HandheldFriendly" content="true">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <link rel="icon" type="image/png" href="{{'favicon.org'|img_asset}}">
+  <script>
+  (function(H) {
+    H.className = H.className.replace(/\bno-js\b/, 'js')
+  })(document.documentElement)
+  </script>
+  <link href="{{'style.css'|css_asset}}" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+ 
+</head>
+<body style="background: rgba(180, 180, 180, 0.2);">
+    <div class="l-wrapper">
+      <div class="l-container">
+        <div class="c-ae__hero">
+          <h1 class="c-title" style="font-size: 42px; margin-bottom: 0; text-align: left;">Ваша заявка принята</h1>
+        </div>
+        <p class="c-programm__item-desc c-ae__desc" style="margin-bottom: 40px;">
+          Благодарим вас за&nbsp;проявленный интерес к&nbsp;программе You Trust IT. <br/>
+          В&nbsp;течение 1-2 дней мы&nbsp;рассмотрим заявку и&nbsp;свяжемся с&nbsp;Вами для согласования дальнейших действий.
+        </p>
+        <a href="http://mssecurity.ru/" class="c-form__btn"><span>Вернуться на сайт</span></a>
+      </div>
+    </div>
+    {%- if not isExport %}
+      <!-- include liveReload only in Dev server -->
+      <script src="//localhost:35729/livereload.js"></script>
+    {%- endif %}
+</body>
+
+</html>

@@ -1,87 +1,100 @@
-{% extends layout %}
-{% import 'macros.html' as Macro %}
-{% block content %}
-  <script>
-  $(function($) {
+{% extends layout %} {% import 'macros.html' as Macro %} {% block content %}
+<script>
+$(function($) {
 
 
-      var canSubmit = true;
+    var canSubmit = true;
 
-      $('input.required').on('input', function() {
-          canSubmit = true;
+    $('input.required').on('input', function() {
+        canSubmit = true;
 
-          $('input.required').each(function(index, item) {
-              var val = $(item).val();
-              if (!val || val.length == 0)
-                  canSubmit = false;
-          });
+        $('input.required').each(function(index, item) {
+            var val = $(item).val();
+            if (!val || val.length == 0)
+                canSubmit = false;
+        });
 
-          $('select.required').each(function(index, item) {
-              var val = $(item).val();
-              if (!val || val.length == 0)
-                  canSubmit = false;
-          });
+        $('select.required').each(function(index, item) {
+            var val = $(item).val();
+            if (!val || val.length == 0)
+                canSubmit = false;
+        });
 
-          refreshButton();
-      });
+        refreshButton();
+    });
 
-      $('select.required').on('change', function() {
-          canSubmit = true;
+    $('select.required').on('change', function() {
+        canSubmit = true;
 
-          $('input.required').each(function(index, item) {
-              var val = $(item).val();
-              if (!val || val.length == 0)
-                  canSubmit = false;
-          });
+        $('input.required').each(function(index, item) {
+            var val = $(item).val();
+            if (!val || val.length == 0)
+                canSubmit = false;
+        });
 
-          $('select.required').each(function(index, item) {
-              var val = $(item).val();
-              if (!val || val.length == 0)
-                  canSubmit = false;
-          });
+        $('select.required').each(function(index, item) {
+            var val = $(item).val();
+            if (!val || val.length == 0)
+                canSubmit = false;
+        });
 
-          refreshButton();
-      });
+        refreshButton();
+    });
 
-      $('#regForm').submit(function() {
+    $('#regForm').submit(function() {
 
-          changeStatus('CB_Email', $('#cbb_email').is(':checked'));
-          changeStatus('CB_Phone', $('#cbb_phone').is(':checked'));
-          changeStatus('PCB_Email', $('#pcbb_email').is(':checked'));
-          changeStatus('PCB_Phone', $('#pcbb_phone').is(':checked'));
-          changeStatus('CB_Gov', $('#cbb_gov').is(':checked'));
+        changeStatus('CB_Email', $('#cbb_email').is(':checked'));
+        changeStatus('CB_Phone', $('#cbb_phone').is(':checked'));
+        changeStatus('PCB_Email', $('#pcbb_email').is(':checked'));
+        changeStatus('PCB_Phone', $('#pcbb_phone').is(':checked'));
+        changeStatus('CB_Gov', $('#cbb_gov').is(':checked'));
 
 
 
 
-          return true;
-      });
+        return true;
+    });
 
-      function changeStatus(field, status) {
-          $('#' + field).val(status ? 'Yes' : 'No');
-      }
+    function changeStatus(field, status) {
+        $('#' + field).val(status ? 'Yes' : 'No');
+    }
 
-      function refreshButton() {
-          if (canSubmit) {
-              $('#btnSubmit').removeAttr('disabled');
-          } else {
-              $('#btnSubmit').attr('disabled', 'disabled');
-          }
-      }
-  });
-  </script>
-  <div class="l-wrapper c-ae">
+    function refreshButton() {
+        if (canSubmit) {
+            $('#btnSubmit').removeAttr('disabled');
+        } else {
+            $('#btnSubmit').attr('disabled', 'disabled');
+        }
+    }
+});
+</script>
+<div class="l-wrapper c-ae">
+    <div class="c-ae__hero">
+        <div class="l-container">
+          <h1 class="c-title" style="font-size: 42px;">Закажите мастер-класс по&nbsp;демонстрации выбранного решения и&nbsp;обсуждению пилота</h1>
+          <div class="l-row">
+              <div class="l-col--md-4">
+                  <div class="c-programm__item-title c-ae__title" style="display: none">
+                      <span>Выбранное решение:</span>
+                      <div class="c-partners__img c-ae-partners__img" id="currentCaseName"></div>
+                  </div>
+              </div>
+              <div class="l-col--md-8">
+                  <div class="c-ae__intro">
+                      <p class="c-programm__item-desc c-ae__desc">
+                          <span id="partnerExistText" style="display: none">
+                            В&nbsp;течение двух рабочих дней после отправки заявки с&nbsp;Вами свяжется экспертный представитель выбранной компании-партнера и&nbsp;договорится о&nbsp;дальнейшем взаимодействии.
+                          </span>
+                      </p>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
     <div class="l-container">
-        <h1 class="c-title" style="font-size: 42px; margin-bottom: 30px;">Закажите мастер-класс по&nbsp;демонстрации выбранного решения и&nbsp;обсуждению пилота</h1>
-        <div class="c-programm__item-title c-ae__title" style="display: none">
-          <span>Выбранное решение:</span>
-          <div class="c-partners__img c-ae-partners__img" id="currentCaseName"></div>
-        </div>
-        <div class="c-ae__text c-ae__intro">
-            <p class="c-programm__item-desc c-ae__desc"><span id="partnerExistText" style="display: none">В&nbsp;течение двух рабочих дней после отправки заявки с&nbsp;Вами свяжется экспертный представитель
-            <br> выбранной компании-партнера и&nbsp;договорится о&nbsp;дальнейшем взаимодействии.
-            <br></span>Поля отмеченные звездочкой (*) обязательны к&nbsp;заполнению.</p>
-        </div>
+        <p class="c-ae__text c-programm__item-desc c-ae__desc">
+            Поля, отмеченные звездочкой (*), обязательны к&nbsp;заполнению.
+        </p>
         <form class="c-form" method="post" id="regForm" enctype="multipart/form-data">
             <input type="hidden" name="formId" id="formId" value="d27c96c6-ac31-4206-881d-44b40ffcb01d" />
             <input type="hidden" name="CB_Email" id="CB_Email" value="No" />
@@ -89,15 +102,13 @@
             <input type="hidden" name="PCB_Email" id="PCB_Email" value="No" />
             <input type="hidden" name="PCB_Phone" id="PCB_Phone" value="No" />
             <input type="hidden" name="CB_Gov" id="CB_Gov" value="No" />
-
             <input type="hidden" id="SelectedPartners" name="SelectedPartners" value="">
-
             <div class="l-row">
                 <div class="l-col--md-6">
                     <label class="c-form__field c-form__field--required">
                         <div class="c-form__label">Имя (на русском языке)&nbsp;*</div>
                         <div class="c-form__wrapper">
-                          {{ Macro.RazorInput("FirstName", "c-form__control required", isExport) }}
+                            {{ Macro.RazorInput("FirstName", "c-form__control required", isExport) }}
                         </div>
                     </label>
                     <label class="c-form__field c-form__field--required">
@@ -163,11 +174,11 @@
                 </div>
             </div>
             <div class="c-form__policy">
-                <p class="c-programm__item-desc c-ae__desc">Отправляя эту страницу, я подтверждаю, что я ознакомился с <a href="https://www.microsoft.com/ru-ru/about/piidatapolicy/privacy.aspx" target="_blank">политикой в отношении обработки персональных данных ООО «Майкрософт Рус»</a> и даю согласие оператору ООО «Майкрософт Рус», находящемуся по адресу Российская Федерация, 121614, г. Москва, ул. Крылатская, д. 17, к.1
-                    <br> - на обработку (сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу, в том числе трансграничную (распространение, предоставление, доступ), блокирование, удаление, уничтожение с использованием средств автоматизации и без использования таких средств) моих персональных данных
-                    <br> - на поручение обработки и/или передачу моих персональных данных третьим лицамх
-                    <br> - на раскрытие персональных данных определенному кругу лицх
-                    <br> в целях осуществления взаимодействия с потенциальными и существующими клиентами и партнерами. Мои персональные данные, в отношении которых дается данное согласие, включают: ФИО, место работы, должность, контактные данные (номера телефонов (рабочий, мобильный) и факса, адреса электронной почты, почтовый адрес), адрес компании, знание иностранных языков. Я осведомлен, что ООО «Майкрософт Рус» будет обрабатывать данные только в случае если это необходимо для определенной цели и может запросить, чтобы я продлил срок действия своего согласия на обработку по истечении 5 лет с тем, чтобы гарантировать, что оно соответствует моим намерениям. <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Пожалуйста, прочтите заявление о конфиденциальности корпорации Майкрософт</a>.</p>
+                <p class="c-ae__desc">Отправляя эту страницу, я подтверждаю, что я ознакомился с <a href="https://www.microsoft.com/ru-ru/about/piidatapolicy/privacy.aspx" target="_blank">политикой в отношении обработки персональных данных ООО «Майкрософт Рус»</a> и даю согласие оператору ООО «Майкрософт Рус», находящемуся по адресу Российская Федерация, 121614, г. Москва, ул. Крылатская, д. 17, к. 1:
+                    <br> - на обработку (сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу, в том числе трансграничную (распространение, предоставление, доступ), блокирование, удаление, уничтожение с использованием средств автоматизации и без использования таких средств) моих персональных данных,
+                    <br> - на поручение обработки и/или передачу моих персональных данных третьим лицам,
+                    <br> - на раскрытие персональных данных определенному кругу лиц,
+                    <br> в целях осуществления взаимодействия с потенциальными и существующими клиентами и партнерами. Мои персональные данные, в отношении которых дается данное согласие, включают: ФИО, место работы, должность, контактные данные (номера телефонов (рабочий, мобильный) и факса, адреса электронной почты, почтовый адрес), адрес компании, знание иностранных языков. Я осведомлен, что ООО «Майкрософт Рус» будет обрабатывать данные только в случае, если это необходимо для определенной цели, и может запросить, чтобы я продлил срок действия своего согласия на обработку по истечении 5 лет с тем, чтобы гарантировать, что оно соответствует моим намерениям. <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Пожалуйста, прочтите заявление о конфиденциальности корпорации Майкрософт</a>.</p>
             </div>
             <div class="c-form__footer">
                 <button class="c-form__btn" id="btnSubmit" type="submit" disabled="disabled"><span>Отправить заявку</span></button>
@@ -175,39 +186,40 @@
             </div>
         </form>
         <script>
-          window.partners = {{ index.partners | dump }}
+        window.partners = {{ index.partners | dump }}
 
-          $(function() {
+        $(function() {
             var caseID, currentCase, partnersList;
 
             function getURLQueryByName(name, url) {
-              if (!url) url = window.location.href;
-              name = name.replace(/[\[\]]/g, "\\$&");
-              var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
-                results = regex.exec(url);
-              if (!results) return null;
-              if (!results[2]) return '';
-              return decodeURIComponent(results[2].replace(/\+/g, " "));
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
             }
 
             if (!!window.location.search) {
-              caseID = getURLQueryByName('caseid', window.location.search);
+                caseID = getURLQueryByName('caseid', window.location.search);
 
-              for (var i = 0; i < window.partners.length; i++) {
-                if (window.partners[i].id === caseID) {
-                  currentCase = window.partners[i];
+                for (var i = 0; i < window.partners.length; i++) {
+                    if (window.partners[i].id === caseID) {
+                        currentCase = window.partners[i];
+                    }
                 }
-              }
 
-              if (!!currentCase) {
-                $('#SelectedPartners').val(currentCase.id);
-                $('.c-programm__item-title').css('display', 'block');
-                $('#partnerExistText').css('display', 'block');
-                $('#currentCaseName').css('background-image', 'url(http://mssecurity.ru/images/'+ currentCase.img +')');
-              } 
+                if (!!currentCase) {
+                    $('#SelectedPartners').val(currentCase.id);
+                    $('.c-programm__item-title').css('display', 'block');
+                    $('#partnerExistText').css('display', 'block');
+                    $('.c-ae__hero').addClass('c-ae__hero--partner');
+                    $('#currentCaseName').css('background-image', 'url(http://mssecurity.ru/images/' + currentCase.img + ')');
+                }
             }
-          });
+        });
         </script>
     </div>
-  </div>
+</div>
 {% endblock %}
