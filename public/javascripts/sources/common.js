@@ -34,10 +34,6 @@ $(document).ready(function() {
 
 	let circleAnimations = [anim1, anim2 ,anim3]
 
-	function initAnim (id, data, name) {
-		createAnim(id, data, name);
-	};
-
 	watchAnimClass();
 
 	function watchAnimClass() {
@@ -189,11 +185,11 @@ $(document).ready(function() {
 				if(direction == 'down') {
 					sticky.addClass('sticky')
 								.css('top', -sticky.outerHeight())
-								.animate({'top': 0});
+								.animate({'top': 0}, 300);
 				} else {
 					sticky.removeClass('sticky')
 								.css('top', 'auto' )
-								.animate({'top': 'auto'});
+								.animate({'top': 'auto'}, 300);
 				}
 			},
 			offset: function() {
@@ -215,7 +211,7 @@ $(document).ready(function() {
 				$('html, body').animate({
 					scrollTop: $(currentHref).offset().top - sticky.outerHeight()
 				});
-			}, 200);
+			}, 500);
 			
 		} else {
 			$('html, body').animate({
