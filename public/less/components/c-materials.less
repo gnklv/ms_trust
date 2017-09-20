@@ -1,0 +1,53 @@
+.c-materials {
+	padding: 100px 0 100px;
+	background-color: rgba(180, 180, 180, 0.2);
+	
+	@media screen and (max-width: @screen-md) {
+		padding: 60px 0 60px
+	}
+	
+	&__list {
+		line-height: 0;
+	}
+
+	&__item {
+		position: relative;
+		padding-left: 30px;
+		margin-bottom: 15px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 12px;
+			height: 12px;
+			border: 1px solid #005c9c;
+			border-radius: 50%;
+		}
+	}
+
+	&__link {
+		border-bottom: 1px solid #005c9c;
+		.fz(22, 28);
+		font-weight: 300;
+		letter-spacing: .01em;
+		color: #005c9c;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: darken(#005c9c, 10%);
+			border-color: darken(#005c9c, 10%);
+		}
+
+		&:visited {
+			color: darken(#005c9c, 20%);
+			border-color: darken(#005c9c, 20%);
+		}
+
+		@media screen and (max-width: @screen-xs) {
+			.fz(20, 24);
+		}
+	}
+}

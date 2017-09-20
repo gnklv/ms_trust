@@ -5,13 +5,35 @@
 	
 	<section class="c-hero" style="background-image: url({{ 'registration-bg.jpg' | img_asset }})">
 		<div class="l-container">
-			<p class="c-registration__title">Материалы</p>
-			<p class="c-registration__text">
+			<p class="c-registration__title" style="text-align: left">Материалы</p>
+			<p class="c-registration__text" style="text-align: left">
 				Видеоматериалы и&nbsp;презентации <br>
 				конференции Microsoft &laquo;You Trust IT&raquo;
 			</p>
 		</div>
 		{% include "blocks/nav-anchors.html" %}
+	</section>
+
+	<section class="c-materials">
+		<div class="l-container">
+			<ul class="c-materials__list">
+				<li class="c-materials__item">
+					<a class="c-materials__link" href="https://info.microsoft.com/CE-DIGTRNS-CNTNT-FY18-09Sep-14-Yourpathtofulfillment-MGC0001088_01Registration-ForminBody.html" target="_blank">
+						Ваш путь к&nbsp;выполнению &laquo;Общих норм защиты данных&raquo; (GDPR). С&nbsp;Microsoft Cloud выполнять требования GDPR быстрее и&nbsp;проще
+					</a>
+				</li>
+				<li class="c-materials__item">
+					<a class="c-materials__link" href="https://info.microsoft.com/CE-SCRTY-CNTNT-FY18-09Sep-15-Opportunitiesforpartnersinconnection-MGC0001085_01Registration-ForminBody.html" target="_blank">
+						Возможности для партнеров в&nbsp;связи с&nbsp;принятием нового закона &laquo;Общие нормы защиты данных&raquo; (GDRP)
+					</a>
+				</li>
+				<li class="c-materials__item">
+					<a class="c-materials__link" href="https://info.microsoft.com/CE-SCRTY-CNTNT-FY18-09Sep-15-Fivequestionsthatmanagersshouldasktheirsecurity-MGC0001083_01Registration-ForminBody.html" target="_blank">
+						Пять вопросов, которые руководители должны задать своим отделам безопасности
+					</a>
+				</li>
+			</ul>
+		</div>
 	</section>
 
 {% endblock %}
