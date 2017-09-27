@@ -24,6 +24,7 @@
 		}
 	}
 
+
 	&::after {
 		content: '';
 		position: absolute;
@@ -64,6 +65,18 @@
 
 		@media screen and (max-width: @screen-xs) {
 			.fz(14, 16);
+		}
+	}
+
+	&--orange {
+		border-color: #e67e22;
+
+		.c-btn__text {
+			color: #e67e22;
+		}
+
+		&.c-btn::after {
+			background: #e67e22;
 		}
 	}
 }
