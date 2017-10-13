@@ -4,7 +4,8 @@ $(document).ready(function() {
 			burgerBtn,
 			partnersSlider, speakersSlider, slickOpts,
 			sticky, stickyWrapper, top_spacing, waypoint_offset, 
-			anchorLink, subnavList, subnavTitle, subnavClass;
+			anchorLink, subnavList, subnavTitle, subnavClass,
+			cardBtn, modalCard, btnCloseCard;
 
 	AOS.init();
 
@@ -160,18 +161,46 @@ $(document).ready(function() {
 		closeModal(modal);
 	});
 
-	function openModal(el) {
-		el.addClass('open');
+	cardBtn = $('.c-card__img');
+	modalCard = $('.c-modal-card__overlay');
+	btnCloseCard = $('.c-modal-card__close');
 
-		$('body').css({ 'overflow': 'hidden', 'margin-right': `${getScrollBarWidth()}px` });
-		$('.c-hero__desc').css('right', `${getScrollBarWidth()}px`);
+	cardBtn.on('click', function() {
+		var url = $(this).data('url'),
+				inner = $('.c-modal-card__inner');
+
+		inner.append('<iframe width="100%" height="100%" src='+ url +' frameborder="0" allowfullscreen></iframe>');
+		
+		openModal(modalCard);
+	});
+
+	btnCloseCard.on('click', function() {
+
+		closeModal(modalCard);
+	});
+
+	function openModal(el) {
+		if (el) {
+			el.addClass('open');
+
+			$('body').css({ 'overflow': 'hidden', 'margin-right': `${getScrollBarWidth()}px` });
+			$('.c-hero__desc').css('right', `${getScrollBarWidth()}px`);
+		}
 	}
 
 	function closeModal(el) {
-		el.removeClass('open');
+		if (el) {
+			var videoInner = $('.c-modal-card__inner');
+			
+			el.removeClass('open');
 
-		$('body').css({'overflow': '', 'margin-right': ''});
-		$('.c-hero__desc').css('right', '');
+			$('body').css({'overflow': '', 'margin-right': ''});
+			$('.c-hero__desc').css('right', '');
+
+			if (videoInner) {
+				videoInner.html('');
+			}
+		}
 	}
 
 	sticky = $('.c-hero__desc');
@@ -247,7 +276,20 @@ $(document).ready(function() {
 			case $('.c-modal__close-icon')[0]:
 				closeModal($('.c-modal__overlay'));
 		}
+
+		switch(event.target) {
+      case $('.c-modal-card__overlay')[0]:
+      case $('.c-modal-card__wrapper')[0]:
+        closeModal(modalCard);
+    }
 	});
+
+	$(document).keyup(function(event) {
+    if (event.keyCode === 27) {
+    	closeModal(modal);
+    	closeModal(modalCard);
+    };
+  });
 
 });
 (function() {

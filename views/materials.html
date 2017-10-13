@@ -15,6 +15,75 @@
 
 	<section class="c-materials">
 		<div class="l-container">
+			<p class="c-title cards">Пленарная сессия</p>
+			<div class="c-card__wrapper">
+				{%- for item in  index.programm.plenar %}
+				{%- if item.card %}
+				<div class="c-card__item">
+					<div class="c-card__img" data-url="{{ item.card.videoUrl }}" style="background-image: url({{ item.card.preview | img_asset }})">
+						<span></span>
+					</div>
+					<div class="c-card__content">
+						<div class="c-card__title">{{ item.title | safe }}</div>
+						<div class="c-card__text">{{ item.card.speakers | safe }}</div>
+					</div>
+				</div>
+				{%- endif %}
+				{%- endfor%}
+			</div>
+			<p class="c-title cards">Законодательство и&nbsp;правовые регламенты</p>
+			<div class="c-card__wrapper">
+				{%- for item in  index.programm.track1 %}
+				{%- if item.card %}
+				<div class="c-card__item">
+					<div class="c-card__img" data-url="{{ item.card.videoUrl }}" style="background-image: url({{ item.card.preview | img_asset }})">
+						<span></span>
+					</div>
+					<div class="c-card__content">
+						<div class="c-card__title">{{ item.title | safe }}</div>
+						<div class="c-card__text">{{ item.card.speakers | safe }}</div>
+					</div>
+				</div>
+				{%- endif %}
+				{%- endfor%}
+			</div>
+			<p class="c-title cards">Кибербезопасность бизнеса и&nbsp;бизнес-процессов</p>
+			<div class="c-card__wrapper">
+				{%- for item in  index.programm.track2 %}
+				{%- if item.card %}
+				<div class="c-card__item">
+					<div class="c-card__img" data-url="{{ item.card.videoUrl }}" style="background-image: url({{ item.card.preview | img_asset }})">
+						<span></span>
+					</div>
+					<div class="c-card__content">
+						<div class="c-card__title">{{ item.title | safe }}</div>
+						<div class="c-card__text">{{ item.card.speakers | safe }}</div>
+					</div>
+				</div>
+				{%- endif %}
+				{%- endfor%}
+			</div>
+			<p class="c-title cards">Чтобы бизнес стал безопасным. Решения</p>
+			<div class="c-card__wrapper">
+				{%- for item in  index.programm.track3 %}
+				{%- if item.card %}
+				<div class="c-card__item">
+					<div class="c-card__img" data-url="{{ item.card.videoUrl }}" style="background-image: url({{ item.card.preview | img_asset }})">
+						<span></span>
+					</div>
+					<div class="c-card__content">
+						<div class="c-card__title">{{ item.title | safe }}</div>
+						<div class="c-card__text">{{ item.card.speakers | safe }}</div>
+					</div>
+				</div>
+				{%- endif %}
+				{%- endfor%}
+			</div>
+		</div>
+	</section>
+
+	<section class="c-materials c-materials--gray">
+		<div class="l-container">
 			<ul class="c-materials__list">
 				<li class="c-materials__item">
 					<a class="c-materials__link" href="https://info.microsoft.com/CE-DIGTRNS-CNTNT-FY18-09Sep-14-Yourpathtofulfillment-MGC0001088_01Registration-ForminBody.html" target="_blank">
@@ -49,5 +118,14 @@
 			</ul>
 		</div>
 	</section>
+
+	<div class="c-modal-card__overlay">
+		<div class="c-modal-card__wrapper">
+			<div class="c-modal-card">
+				<button class="c-modal-card__close"><span class="c-modal__close-icon"></span></button>
+				<div class="c-modal-card__inner"></div>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}
